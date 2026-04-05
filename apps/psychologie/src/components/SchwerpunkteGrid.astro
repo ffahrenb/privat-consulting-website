@@ -1,0 +1,77 @@
+---
+const schwerpunkte = [
+  {
+    title: 'Datengetriebene Organisationsentwicklung',
+    text: 'Data Governance, Datenstrategie, Datenkultur – wenn die Technik steht, aber die Menschen nicht mitziehen. Ich begleite Organisationen an der Schnittstelle von Daten, Prozessen und Zusammenarbeit.',
+    anchor: 'datengetriebene-organisationsentwicklung',
+  },
+  {
+    title: 'Psychologie der digitalen Transformation',
+    text: 'Veränderungsprozesse rund um neue Systeme, Rollen und Arbeitsweisen. Ich unterstütze Führungskräfte und Teams dabei, technologiegetriebenen Wandel menschlich zu gestalten.',
+    anchor: 'psychologie-der-digitalen-transformation',
+  },
+  {
+    title: 'Führung & Coaching',
+    text: 'Individuelle Begleitung für Führungskräfte und Fachpersonen in anspruchsvollen beruflichen Situationen – von Rollenklärung über Entscheidungsfindung bis zum Umgang mit Druck.',
+    anchor: 'führung--coaching',
+  },
+  {
+    title: 'Stress & Recovery',
+    text: 'Wissenschaftlich fundierte Beratung zum Umgang mit Stress, Erholung und Prävention – für Einzelpersonen und Organisationen.',
+    anchor: 'stress--recovery',
+  },
+  {
+    title: 'Psychologie in den Bergen',
+    text: 'Sturzangst, mentale Blockaden, Risikoeinschätzung – psychologische Beratung für Bergsportlerinnen und Bergsportler. Als SAC-Tourenleiter, Skilehrer und Kletterlehrer kenne ich die Situationen aus eigener Erfahrung.',
+    anchor: 'psychologie-in-den-bergen',
+  },
+];
+---
+
+<div class="schwerpunkte-grid">
+  {schwerpunkte.map(item => (
+    <a href={`/schwerpunkte/#${item.anchor}`} class="schwerpunkt-card">
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </a>
+  ))}
+</div>
+
+<style>
+  .schwerpunkte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: var(--max-width-wide);
+    margin: var(--space-lg) auto 0;
+  }
+
+  .schwerpunkt-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-md);
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+
+  .schwerpunkt-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(26, 58, 74, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .schwerpunkt-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .schwerpunkt-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>

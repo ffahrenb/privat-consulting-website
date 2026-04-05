@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bunx create-astro@latest . --template minimal --no-install --no-git)",
+      "Bash(where bun:*)",
+      "Bash(ls \"/c/Users/florian.fahrenbach/.bun/bin/bun\"*)",
+      "Bash(powershell.exe -Command \"where.exe bun\")",
+      "Bash(powershell.exe:*)",
+      "Bash(export PATH=\"$HOME/.bun/bin:$PATH\")",
+      "Bash(bun --version)",
+      "Bash(bunx create-astro@latest . --template minimal --no-install --no-git --skip-houston)",
+      "Bash(cp /tmp/astro-scaffold/.gitignore .)",
+      "Bash(cp -r /tmp/astro-scaffold/.vscode .)",
+      "Bash(cp /tmp/astro-scaffold/public/favicon.svg public/)",
+      "Bash(mkdir -p public src/pages src/content/pages src/layouts src/components src/styles .github/workflows public/fonts)",
+      "Bash(bun install:*)",
+      "Bash(export:*)",
+      "Bash(bun run:*)",
+      "Bash(curl -sL \"https://fonts.google.com/download?family=DM+Serif+Display\" -o /tmp/dm-serif.zip)",
+      "Bash(curl -sL \"https://fonts.google.com/download?family=Source+Sans+3\" -o /tmp/source-sans.zip)",
+      "Read(//c/tmp/**)",
+      "Bash(unzip -o dm-serif.zip -d dm-serif)",
+      "Bash(unzip -o source-sans.zip -d source-sans)",
+      "Bash(curl -sH \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" \"https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap\")",
+      "Bash(curl:*)",
+      "Bash(ls -la *.woff2)",
+      "Bash(chmod +r \"C:/Users/florian.fahrenbach/Projects/privat-psychologie-website/node_modules/@esbuild/win32-x64/esbuild.exe\")",
+      "Bash(\"C:/Users/florian.fahrenbach/Projects/privat-psychologie-website/node_modules/@esbuild/win32-x64/esbuild.exe\" --version)",
+      "Bash(bun add:*)",
+      "Bash(node -e \"require\\('esbuild-wasm'\\).version\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/astro/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(zip -r \"../psychologie-website-preview.zip\" . -x \"fonts/*\" \"_astro/*\" \"CNAME\" \"sitemap*\" \"robots.txt\")",
+      "Bash(rm:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

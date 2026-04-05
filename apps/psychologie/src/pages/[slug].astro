@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages
+    .filter(page => page.id !== 'startseite')
+    .map(page => ({
+      params: { slug: page.id },
+      props: { page },
+    }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const isKontakt = page.id === 'kontakt';
+---
+
+<BaseLayout title={page.data.title} description={page.data.description}>
+  <section class="page-header">
+    <div class="container">
+      <h1>{page.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <Content />
+    </div>
+  </section>
+
+  {isKontakt && (
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="form-heading">Kontaktformular</h2>
+        <p class="form-intro">
+          Ihre Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet.
+        </p>
+        <ContactForm />
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-bg-alt);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    max-width: var(--max-width);
+    margin-bottom: 0;
+  }
+
+  .form-heading {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .form-intro {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-lg);
+  }
+</style>

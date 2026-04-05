@@ -1,0 +1,161 @@
+---
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'de' } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-main">
+      <div class="footer-info">
+        <p class="footer-name">Florian Fahrenbach</p>
+        <p class="footer-role">Consulting</p>
+        <p class="footer-address">
+          Affolternstrasse 10<br />
+          8908 Hedingen, {lang === 'en' ? 'Switzerland' : 'Schweiz'}
+        </p>
+        <p class="footer-email">
+          <a href="mailto:florian.fahrenbach@gmail.com">florian.fahrenbach@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="footer-links">
+        {lang === 'en' ? (
+          <nav aria-label="Legal">
+            <ul>
+              <li><a href="/en/legal/">Legal Notice</a></li>
+              <li><a href="/en/privacy/">Privacy Policy</a></li>
+            </ul>
+          </nav>
+        ) : (
+          <nav aria-label="Rechtliches">
+            <ul>
+              <li><a href="/impressum/">Impressum</a></li>
+              <li><a href="/datenschutz/">Datenschutzerklärung</a></li>
+            </ul>
+          </nav>
+        )}
+      </div>
+    </div>
+
+    <div class="footer-cross">
+      {lang === 'en' ? (
+        <p>For psychological counselling and coaching visit <a href="https://psychologie.fahrenba.ch/en/">psychologie.fahrenba.ch</a></p>
+      ) : (
+        <p>Für psychologische Beratung und Coaching besuchen Sie <a href="https://psychologie.fahrenba.ch">psychologie.fahrenba.ch</a></p>
+      )}
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Florian Fahrenbach. {lang === 'en' ? 'All rights reserved.' : 'Alle Rechte vorbehalten.'}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: var(--space-xl) 0 var(--space-md);
+    margin-top: var(--space-2xl);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .footer-main {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  .footer-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.125rem;
+  }
+
+  .footer-role {
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.7;
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer-address {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin-bottom: var(--space-xs);
+  }
+
+  .footer-email a {
+    color: var(--color-bg);
+    opacity: 0.85;
+    font-size: 0.9375rem;
+  }
+
+  .footer-email a:hover {
+    opacity: 1;
+    color: var(--color-bg);
+  }
+
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    color: var(--color-bg);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+    color: var(--color-bg);
+  }
+
+  .footer-cross {
+    font-size: 0.875rem;
+    opacity: 0.6;
+    padding-bottom: var(--space-sm);
+  }
+
+  .footer-cross a {
+    color: var(--color-bg);
+    opacity: 0.85;
+  }
+
+  .footer-cross a:hover {
+    opacity: 1;
+    color: var(--color-bg);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(247, 244, 240, 0.15);
+    padding-top: var(--space-md);
+    font-size: 0.8125rem;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .footer-main {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+  }
+</style>

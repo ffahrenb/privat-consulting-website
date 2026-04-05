@@ -1,0 +1,105 @@
+---
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'de' } = Astro.props;
+
+const schwerpunkteDe = [
+  {
+    title: 'Datengetriebene Organisationsentwicklung',
+    text: 'Data Governance, Datenstrategie, Datenkultur – wenn die Technik steht, aber die Menschen nicht mitziehen. Ich begleite Organisationen an der Schnittstelle von Daten, Prozessen und Zusammenarbeit.',
+    href: '/leistungen/#datengetriebene-organisationsentwicklung',
+  },
+  {
+    title: 'Change-Begleitung bei digitaler Transformation',
+    text: 'Neue Systeme, neue Rollen, neue Arbeitsweisen – und die Frage, wie Menschen den Wandel mittragen. Ich unterstütze Führungskräfte und Teams dabei, technologiegetriebene Veränderung menschlich zu gestalten.',
+    href: '/leistungen/#change-begleitung-bei-digitaler-transformation',
+  },
+  {
+    title: 'Enterprise Architecture & Prozesslandschaft',
+    text: 'Geschäftsprozesse, Datenobjekte, Applikationen und Schnittstellen – modelliert, verknüpft und strategisch ausgerichtet. Ich bringe die Brücke zwischen Business und IT.',
+    href: '/leistungen/#enterprise-architecture--prozesslandschaft',
+  },
+  {
+    title: 'Teamentwicklung & Zusammenarbeit',
+    text: 'Für Teams an der Schnittstelle von Fachbereich und Daten/IT, die ihre Zusammenarbeit verbessern, Spannungen klären oder gemeinsam eine Richtung finden wollen.',
+    href: '/leistungen/#teamentwicklung--zusammenarbeit',
+  },
+];
+
+const schwerpunkteEn = [
+  {
+    title: 'Data-driven Organisational Development',
+    text: 'Data governance, data strategy, data culture – when the technology is in place but people aren\'t on board. I work with organisations at the intersection of data, processes and collaboration.',
+    href: '/en/services/#data-driven-organisational-development',
+  },
+  {
+    title: 'Change Management in Digital Transformation',
+    text: 'New systems, new roles, new ways of working – and the question of how to bring people along. I support leaders and teams in shaping technology-driven change with a human focus.',
+    href: '/en/services/#change-management-in-digital-transformation',
+  },
+  {
+    title: 'Enterprise Architecture & Process Landscape',
+    text: 'Business processes, data objects, applications and interfaces – modelled, linked and strategically aligned. I bridge the gap between business and IT.',
+    href: '/en/services/#enterprise-architecture--process-landscape',
+  },
+  {
+    title: 'Team Development & Collaboration',
+    text: 'For teams at the intersection of business and data/IT who want to improve their collaboration, resolve tensions or find a shared direction.',
+    href: '/en/services/#team-development--collaboration',
+  },
+];
+
+const schwerpunkte = lang === 'en' ? schwerpunkteEn : schwerpunkteDe;
+---
+
+<div class="schwerpunkte-grid">
+  {schwerpunkte.map(item => (
+    <a href={item.href} class="schwerpunkt-card">
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </a>
+  ))}
+</div>
+
+<style>
+  .schwerpunkte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: var(--max-width-wide);
+    margin: var(--space-lg) auto 0;
+  }
+
+  .schwerpunkt-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-md);
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+
+  .schwerpunkt-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(26, 58, 74, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .schwerpunkt-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .schwerpunkt-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchwerpunkteGrid from '../../components/SchwerpunkteGrid.astro';
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import portrait from '../../assets/portrait.jpg';
+
+const home = (await getCollection('pages')).find(p => p.id === 'en/home');
+if (!home) throw new Error('en/home.md not found');
+
+const { Content } = await render(home);
+---
+
+<BaseLayout title={home.data.title} description={home.data.description} lang="en">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <h1>The human side<br />of data strategy.</h1>
+          <p class="hero-subline">
+            I'm a psychologist and have built data governance myself.
+            I support organisations, leaders and teams in shaping data-driven
+            change so that people come along –
+            evidence-based, hands-on and clear.
+          </p>
+          <a href="/en/contact/" class="btn btn-primary">Schedule a free consultation</a>
+        </div>
+        <div class="hero-portrait">
+          <Image
+            src={portrait}
+            alt="Florian Fahrenbach, Consulting"
+            width={320}
+            quality={80}
+            class="portrait-img"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <Content />
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Services</h2>
+      <SchwerpunkteGrid lang="en" />
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container prose" style="text-align: center;">
+      <h2>Facing a data-driven transformation – and wondering how to bring people along?</h2>
+      <p>
+        In a short, non-binding initial consultation, we'll explore together
+        how I can support you.
+      </p>
+      <a href="/en/contact/" class="btn btn-outline">Get in touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero-layout {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: var(--max-width);
+  }
+
+  .hero h1 {
+    color: var(--color-bg);
+    font-size: 2.75rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-subline {
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+    max-width: 580px;
+  }
+
+  .hero-portrait {
+    flex-shrink: 0;
+  }
+
+  .portrait-img {
+    border-radius: 50%;
+    border: 4px solid rgba(247, 244, 240, 0.2);
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .section-heading {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .cta-section h2 {
+    margin-top: 0;
+  }
+
+  .cta-section p {
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subline {
+      font-size: 1.0625rem;
+    }
+
+    .hero-layout {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    .hero-subline {
+      max-width: 100%;
+    }
+
+    .portrait-img {
+      width: 180px;
+      height: 180px;
+    }
+  }
+</style>

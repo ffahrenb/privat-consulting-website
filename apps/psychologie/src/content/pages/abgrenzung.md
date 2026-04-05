@@ -1,7 +1,7 @@
 ---
 title: "Hinweis: Keine Psychotherapie"
 description: "Abgrenzung psychologische Beratung und Psychotherapie – was ich anbiete und was nicht."
-navOrder: 9
+navOrder: 10
 navGroup: footer
 ---
 
@@ -15,7 +15,7 @@ Psychotherapie ist die professionelle Behandlung von psychischen Störungen mit 
 
 ## Abgrenzung
 
-Mein Angebot umfasst **psychologische Beratung, Coaching und Organisationsentwicklung**. Ich biete **keine Psychotherapie** an und behandle **keine psychischen Störungen mit Krankheitswert**.
+Mein Angebot umfasst **psychologische Beratung, Coaching und Employee Assistance**. Ich biete **keine Psychotherapie** an und behandle **keine psychischen Störungen mit Krankheitswert**.
 
 Konkret bedeutet das:
 

@@ -1,34 +1,56 @@
 ---
-const currentPath = Astro.url.pathname;
+import type { Lang } from '../i18n';
+import { getAlternateUrl } from '../i18n';
 
-const navItems = [
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'de' } = Astro.props;
+const currentPath = Astro.url.pathname;
+const alternate = getAlternateUrl(currentPath);
+
+const navItemsDe = [
   { label: 'Startseite', href: '/' },
   { label: 'Über mich', href: '/ueber-mich/' },
   { label: 'Angebot', href: '/angebot/' },
-  { label: 'Schwerpunkte', href: '/schwerpunkte/' },
+  { label: 'Für Unternehmen', href: '/unternehmen/' },
+  { label: 'Wissenschaft', href: '/wissenschaft/' },
   { label: 'Ablauf', href: '/ablauf/' },
   { label: 'Kontakt', href: '/kontakt/' },
 ];
 
+const navItemsEn = [
+  { label: 'Home', href: '/en/' },
+  { label: 'About', href: '/en/about/' },
+  { label: 'Services', href: '/en/services/' },
+  { label: 'For Companies', href: '/en/companies/' },
+  { label: 'Science', href: '/en/science/' },
+  { label: 'Process', href: '/en/process/' },
+  { label: 'Contact', href: '/en/contact/' },
+];
+
+const navItems = lang === 'en' ? navItemsEn : navItemsDe;
+
 function isActive(href: string): boolean {
-  if (href === '/') return currentPath === '/';
+  if (href === '/' || href === '/en/') return currentPath === href;
   return currentPath.startsWith(href);
 }
 ---
 
 <header class="site-header">
   <div class="header-inner container">
-    <a href="/" class="logo">
+    <a href={lang === 'en' ? '/en/' : '/'} class="logo">
       <span class="logo-name">Florian Fahrenbach</span>
-      <span class="logo-title">Psychologe FSP</span>
+      <span class="logo-title">{lang === 'en' ? 'Psychologist FSP' : 'Psychologe FSP'}</span>
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
-    <label for="nav-toggle" class="nav-toggle-label" aria-label="Navigation öffnen">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label={lang === 'en' ? 'Open navigation' : 'Navigation öffnen'}>
       <span class="hamburger"></span>
     </label>
 
-    <nav class="main-nav" aria-label="Hauptnavigation">
+    <nav class="main-nav" aria-label={lang === 'en' ? 'Main navigation' : 'Hauptnavigation'}>
       <ul>
         {navItems.map(item => (
           <li>
@@ -40,6 +62,11 @@ function isActive(href: string): boolean {
             </a>
           </li>
         ))}
+        <li class="lang-switch">
+          <a href={alternate.href} title={alternate.lang === 'en' ? 'English' : 'Deutsch'}>
+            {alternate.lang.toUpperCase()}
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -86,6 +113,7 @@ function isActive(href: string): boolean {
     display: flex;
     list-style: none;
     gap: 0.25rem;
+    align-items: center;
   }
 
   .main-nav a {
@@ -106,6 +134,24 @@ function isActive(href: string): boolean {
   .main-nav a.active {
     color: var(--color-accent);
     background-color: var(--color-bg-alt);
+  }
+
+  .lang-switch {
+    margin-left: 0.5rem;
+    border-left: 1px solid var(--color-border);
+    padding-left: 0.5rem;
+  }
+
+  .lang-switch a {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    padding: 0.375rem 0.5rem;
+  }
+
+  .lang-switch a:hover {
+    color: var(--color-accent);
   }
 
   /* Hamburger */
@@ -179,6 +225,15 @@ function isActive(href: string): boolean {
 
     .main-nav a {
       padding: 0.75rem 0.5rem;
+    }
+
+    .lang-switch {
+      margin-left: 0;
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid var(--color-border);
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
     }
   }
 </style>

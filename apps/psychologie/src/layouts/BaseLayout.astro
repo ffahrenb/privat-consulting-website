@@ -2,20 +2,30 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import type { Lang } from '../i18n';
+import { getAlternateUrl } from '../i18n';
 
 interface Props {
   title: string;
   description: string;
+  lang?: Lang;
 }
 
-const { title, description } = Astro.props;
-const pageTitle = title === 'Startseite'
-  ? 'Florian Fahrenbach – Psychologe FSP'
-  : `${title} – Florian Fahrenbach, Psychologe FSP`;
+const { title, description, lang = 'de' } = Astro.props;
+
+const homeTitles = { de: 'Startseite', en: 'Home' };
+const suffix = { de: 'Psychologe FSP', en: 'Psychologist FSP' };
+const pageTitle = title === homeTitles[lang]
+  ? `Florian Fahrenbach – ${suffix[lang]}`
+  : `${title} – Florian Fahrenbach, ${suffix[lang]}`;
+
+const currentPath = Astro.url.pathname;
+const alternate = getAlternateUrl(currentPath);
+const siteUrl = 'https://psychologie.fahrenba.ch';
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,12 +36,15 @@ const pageTitle = title === 'Startseite'
 
     <link rel="preload" href="/fonts/dm-serif-display-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="alternate" hreflang={alternate.lang} href={`${siteUrl}${alternate.href}`} />
+    <link rel="alternate" hreflang={lang} href={`${siteUrl}${currentPath}`} />
   </head>
   <body>
-    <Header />
+    <Header lang={lang} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 title: Datenschutzerklärung
 description: "Datenschutzerklärung gemäss Schweizer DSG und DSGVO – Datenbearbeitung, Cookies, Rechte und Aufsichtsbehörde."
-navOrder: 8
+navOrder: 9
 navGroup: footer
 ---
 
@@ -42,8 +42,6 @@ Diese Daten werden vom Hosting-Provider (GitHub Pages) im Rahmen des technischen
 
 Wenn Sie mich per E-Mail oder über das Kontaktformular kontaktieren, werden die von Ihnen übermittelten Daten (z.B. Name, E-Mail-Adresse, Nachricht) gespeichert, um Ihre Anfrage zu bearbeiten und gegebenenfalls weitere Fragen zu beantworten. Diese Daten werden nicht ohne Ihre Einwilligung an Dritte weitergegeben.
 
-Das Kontaktformular wird über den Dienst **Formspree** (Formspree, Inc., USA) bereitgestellt. Beim Absenden des Formulars werden Ihre Daten an Formspree übermittelt und von dort an meine E-Mail-Adresse weitergeleitet. Formspree speichert die übermittelten Daten gemäss seiner eigenen Datenschutzrichtlinie: https://formspree.io/legal/privacy-policy. Die Datenübermittlung in die USA erfolgt auf Grundlage geeigneter Garantien.
-
 Die im Rahmen einer Kontaktanfrage erhobenen Daten werden gelöscht, sobald sie für die Bearbeitung Ihres Anliegens nicht mehr erforderlich sind.
 
 ### 3.3 Beratungsbeziehung
@@ -51,6 +49,10 @@ Die im Rahmen einer Kontaktanfrage erhobenen Daten werden gelöscht, sobald sie 
 Im Rahmen einer Beratungsbeziehung können weitere Personendaten erhoben werden (z.B. Telefonnummer, Terminvereinbarungen, Notizen zu Beratungsgesprächen). Diese Daten dienen ausschliesslich der Durchführung der Beratung und unterliegen der beruflichen Schweigepflicht.
 
 Beratungsbezogene Daten werden nach Abschluss der Beratung und nach Ablauf der gesetzlichen Aufbewahrungsfristen gelöscht, sofern keine gesetzliche Pflicht zur weiteren Aufbewahrung besteht.
+
+### 3.4 Employee Assistance Program
+
+Im Rahmen eines Employee Assistance Programs gelten besondere Vertraulichkeitsregeln. Die Inhalte der Beratungsgespräche unterliegen der Schweigepflicht und werden zu keinem Zeitpunkt an den Arbeitgeber weitergegeben. Anonymisierte Nutzungsstatistiken (z.B. Anzahl der gebuchten Sitzungen) können dem Unternehmen auf Wunsch zur Verfügung gestellt werden.
 
 ---
 
@@ -74,7 +76,7 @@ Personendaten werden nur dann an Dritte weitergegeben, wenn dies zur Erfüllung 
 Diese Webseite wird gehostet bei GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). GitHub kann beim Aufruf dieser Webseite technische Zugriffsdaten erheben (z.B. IP-Adresse, Zeitpunkt des Zugriffs). Ich selbst habe keinen Zugriff auf diese Daten. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
 
 ### Kontaktformular
-Das Kontaktformular wird über Formspree (Formspree, Inc., USA) bereitgestellt. Weitere Informationen: https://formspree.io/legal/privacy-policy
+Das Kontaktformular auf dieser Webseite wird über den Dienst Formspree (Formspree, Inc., USA) verarbeitet. Wenn Sie das Kontaktformular nutzen, werden Ihre eingegebenen Daten an Formspree übermittelt und von dort an mich weitergeleitet. Formspree speichert die Daten vorübergehend zur Zustellung. Weitere Informationen finden Sie in der Datenschutzerklärung von Formspree: https://formspree.io/legal/privacy-policy
 
 ### Videokonferenz
 Für Online-Beratungen verwende ich Zoom (Zoom Video Communications, Inc., USA). Zoom erhebt im Rahmen der Videokonferenz technische Daten. Die Nutzung von Zoom erfolgt auf Grundlage des berechtigten Interesses an einer effizienten Durchführung der Beratung. Weitere Informationen finden Sie in der Datenschutzerklärung von Zoom: https://zoom.us/de/privacy
@@ -116,4 +118,4 @@ www.edoeb.admin.ch
 
 Ich behalte mir vor, diese Datenschutzerklärung jederzeit anzupassen. Die aktuelle Fassung ist auf dieser Webseite veröffentlicht.
 
-Stand: April 2026
+Stand: 5. April 2026

@@ -1,7 +1,7 @@
 ---
 title: Impressum
 description: "Impressum – Angaben gemäss Schweizer Recht, Berufsbezeichnung, Haftungsausschluss und Urheberrecht."
-navOrder: 7
+navOrder: 8
 navGroup: footer
 ---
 

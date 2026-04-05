@@ -1,24 +1,24 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactForm from '../components/ContactForm.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
   return pages
-    .filter(page => page.id !== 'startseite' && !page.id.startsWith('en/'))
+    .filter(page => page.id.startsWith('en/') && page.id !== 'en/home')
     .map(page => ({
-      params: { slug: page.id },
+      params: { slug: page.id.replace('en/', '') },
       props: { page },
     }));
 }
 
 const { page } = Astro.props;
 const { Content } = await render(page);
-const isKontakt = page.id === 'kontakt';
+const isContact = page.id === 'en/contact';
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description}>
+<BaseLayout title={page.data.title} description={page.data.description} lang="en">
   <section class="page-header">
     <div class="container">
       <h1>{page.data.title}</h1>
@@ -31,14 +31,14 @@ const isKontakt = page.id === 'kontakt';
     </div>
   </section>
 
-  {isKontakt && (
+  {isContact && (
     <section class="section section-alt">
       <div class="container">
-        <h2 class="form-heading">Kontaktformular</h2>
+        <h2 class="form-heading">Contact form</h2>
         <p class="form-intro">
-          Ihre Angaben werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet.
+          Your details will only be used to process your enquiry.
         </p>
-        <ContactForm />
+        <ContactForm lang="en" />
       </div>
     </section>
   )}

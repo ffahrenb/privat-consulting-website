@@ -1,7 +1,7 @@
 ---
 title: Kontakt
 description: "Kontaktieren Sie Florian Fahrenbach, Psychologe FSP – Erstgespräch vereinbaren, Fragen stellen, Erreichbarkeit."
-navOrder: 6
+navOrder: 7
 navGroup: main
 ---
 
@@ -11,6 +11,12 @@ Sie möchten ein Erstgespräch vereinbaren oder haben Fragen zu meinem Angebot? 
 
 ### E-Mail
 florian.fahrenbach@gmail.com
+
+---
+
+## Für Unternehmen
+
+Sie möchten Ihren Mitarbeitenden psychologische Unterstützung anbieten? Kontaktieren Sie mich für ein unverbindliches Gespräch zur Bedarfsklärung. Ich erstelle Ihnen gerne ein massgeschneidertes Angebot für ein Employee Assistance Program oder Workshops.
 
 ---
 

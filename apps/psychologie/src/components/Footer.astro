@@ -22,6 +22,9 @@ const currentYear = new Date().getFullYear();
         <p class="footer-email">
           <a href="mailto:florian.fahrenbach@gmail.com">florian.fahrenbach@gmail.com</a>
         </p>
+        <p class="footer-phone">
+          <a href="tel:+41782220886">+41 78 222 08 86</a>
+        </p>
       </div>
 
       <div class="footer-links">
@@ -123,9 +126,16 @@ const currentYear = new Date().getFullYear();
     font-size: 0.9375rem;
   }
 
-  .footer-email a:hover {
+  .footer-email a:hover,
+  .footer-phone a:hover {
     opacity: 1;
     color: var(--color-bg);
+  }
+
+  .footer-phone a {
+    color: var(--color-bg);
+    opacity: 0.85;
+    font-size: 0.9375rem;
   }
 
   .footer-links ul {

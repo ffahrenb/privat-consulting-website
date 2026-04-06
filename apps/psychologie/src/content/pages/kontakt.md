@@ -12,6 +12,9 @@ Sie möchten ein Erstgespräch vereinbaren oder haben Fragen zu meinem Angebot? 
 ### E-Mail
 florian.fahrenbach@gmail.com
 
+### Telefon
++41 78 222 08 86
+
 ---
 
 ## Für Unternehmen

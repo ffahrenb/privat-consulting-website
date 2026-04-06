@@ -44,6 +44,10 @@ Wenn Sie mich per E-Mail oder über das Kontaktformular kontaktieren, werden die
 
 Die im Rahmen einer Kontaktanfrage erhobenen Daten werden gelöscht, sobald sie für die Bearbeitung Ihres Anliegens nicht mehr erforderlich sind.
 
+### 3.2a Elektronische Kommunikation
+
+Bitte beachten Sie: Bei elektronischer Kommunikation (E-Mail, Videokonferenz) kann keine absolute Vertraulichkeit gewährleistet werden. Vertrauliche Inhalte (persönliche oder gesundheitliche Anliegen) sollten nicht per unverschlüsselter E-Mail übermittelt werden.
+
 ### 3.3 Beratungsbeziehung
 
 Im Rahmen einer Beratungsbeziehung können weitere Personendaten erhoben werden (z.B. Telefonnummer, Terminvereinbarungen, Notizen zu Beratungsgesprächen). Diese Daten dienen ausschliesslich der Durchführung der Beratung und unterliegen der beruflichen Schweigepflicht.
@@ -80,6 +84,8 @@ Das Kontaktformular auf dieser Webseite wird über den Dienst Formspree (Formspr
 
 ### Videokonferenz
 Für Online-Beratungen verwende ich Zoom (Zoom Video Communications, Inc., USA). Zoom erhebt im Rahmen der Videokonferenz technische Daten. Die Nutzung von Zoom erfolgt auf Grundlage des berechtigten Interesses an einer effizienten Durchführung der Beratung. Weitere Informationen finden Sie in der Datenschutzerklärung von Zoom: https://zoom.us/de/privacy
+
+Die Beratungssitzungen finden mit aktivierter Verschlüsselung statt. Es werden keine Aufzeichnungen (Recordings) erstellt.
 
 ---
 

@@ -19,6 +19,8 @@ In einem kurzen, unverbindlichen Erstgespräch (ca. 30 Minuten, online via Zoom)
 
 Wenn wir uns für eine Zusammenarbeit entscheiden, vereinbaren wir Ziele, Rahmen und die ersten Termine. Die Beratung beginnt in der Regel mit einer vertieften Auftragsklärung in der ersten regulären Sitzung.
 
+Vor Beginn der Beratung erhalten Sie einen Beratungsvertrag und eine Einwilligungserklärung zur Unterschrift.
+
 ### 4. Beratungsprozess
 
 Die Sitzungen finden im vereinbarten Rhythmus statt – in der Regel alle ein bis zwei Wochen. Jede Sitzung dauert 60 Minuten. Zwischen den Sitzungen besteht Raum für Reflexion und Umsetzung.
@@ -80,6 +82,9 @@ Die Beratung findet auf **Deutsch** oder **Englisch** statt.
 ### Unternehmen
 
 Umfang und Konditionen für Employee Assistance Programme und Workshops werden individuell vereinbart. Nehmen Sie Kontakt auf – ich erstelle Ihnen gerne ein Angebot.
+
+### Zahlung
+Zahlung per Banküberweisung (Rechnung). Barzahlung bei Vor-Ort-Terminen nach Absprache.
 
 ### Absageregelung
 Vereinbarte Termine können bis **24 Stunden vor dem Termin** kostenfrei abgesagt oder verschoben werden. Bei kurzfristigerer Absage oder Nichterscheinen wird eine Pauschale von CHF 120 in Rechnung gestellt.

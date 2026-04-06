@@ -17,6 +17,7 @@ Affolternstrasse 10
 Switzerland
 
 Email: florian.fahrenbach@gmail.com
+Phone: +41 78 222 08 86
 
 ---
 
@@ -40,6 +41,12 @@ The content of this website has been prepared with care. However, I assume no li
 ## Copyright
 
 The content and works created by the operator of this website are subject to Swiss copyright law. Reproduction, editing, distribution or any kind of use beyond the limits of copyright law require the written consent of the author.
+
+---
+
+## Professional ethics and complaints
+
+As a member of the FSP, I am bound by the code of conduct of the Federation of Swiss Psychologists. For concerns regarding professional ethics, you may contact the FSP Ethics Committee: www.psychologie.ch
 
 ---
 

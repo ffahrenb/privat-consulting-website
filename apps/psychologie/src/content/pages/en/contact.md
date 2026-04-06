@@ -12,6 +12,9 @@ Would you like to schedule an initial consultation or have questions about my se
 ### Email
 florian.fahrenbach@gmail.com
 
+### Phone
++41 78 222 08 86
+
 ---
 
 ## For companies

@@ -17,6 +17,7 @@ Affolternstrasse 10
 Schweiz
 
 E-Mail: florian.fahrenbach@gmail.com
+Telefon: +41 78 222 08 86
 
 ---
 
@@ -40,6 +41,12 @@ Die Inhalte dieser Webseite wurden mit Sorgfalt erstellt. Für die Richtigkeit, 
 ## Urheberrecht
 
 Die durch den Betreiber dieser Webseite erstellten Inhalte und Werke unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Autors.
+
+---
+
+## Berufsethik und Beschwerdeweg
+
+Als Mitglied der FSP unterstehe ich der Berufsordnung der Föderation der Schweizer Psycholog:innen. Bei berufsethischen Anliegen können Sie sich an die Berufsethikkommission der FSP wenden: www.psychologie.ch
 
 ---
 

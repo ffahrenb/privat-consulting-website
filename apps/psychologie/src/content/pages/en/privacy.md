@@ -38,6 +38,10 @@ When you contact me by email or via the contact form, the data you provide (e.g.
 
 Data collected in the context of a contact enquiry is deleted once it is no longer needed for processing your request.
 
+### 3.2a Electronic communication
+
+Please note: Absolute confidentiality cannot be guaranteed for electronic communication (email, video conferencing). Confidential content (personal or health-related matters) should not be transmitted via unencrypted email.
+
 ### 3.3 Counselling relationship
 
 During a counselling relationship, additional personal data may be collected (e.g. phone number, appointment scheduling, session notes). This data is used exclusively for the delivery of counselling and is subject to professional confidentiality.
@@ -74,6 +78,8 @@ The contact form on this website is processed via Formspree (Formspree, Inc., US
 
 ### Video conferencing
 For online counselling, I use Zoom (Zoom Video Communications, Inc., USA). Further information: https://zoom.us/en/privacy
+
+Counselling sessions take place with encryption enabled. No recordings are made.
 
 ---
 

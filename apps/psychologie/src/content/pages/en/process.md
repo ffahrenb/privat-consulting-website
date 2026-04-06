@@ -19,6 +19,8 @@ In a short, non-binding initial consultation (approx. 30 minutes, online via Zoo
 
 If we decide to work together, we agree on goals, framework and the first appointments. Counselling typically begins with a deeper exploration of your needs in the first regular session.
 
+Before counselling begins, you will receive a counselling agreement and a consent form for signature.
+
 ### 4. Counselling process
 
 Sessions take place at the agreed rhythm – typically every one to two weeks. Each session lasts 60 minutes. Between sessions, there's space for reflection and implementation.
@@ -80,6 +82,9 @@ Counselling is available in **German** and **English**.
 ### Companies
 
 Scope and pricing for Employee Assistance Programmes and workshops are agreed individually. Get in touch – I'm happy to prepare a proposal.
+
+### Payment
+Payment by bank transfer (invoice). Cash payment for in-person appointments by arrangement.
 
 ### Cancellation policy
 Appointments can be cancelled or rescheduled free of charge up to **24 hours before the session**. For later cancellations or no-shows, a flat fee of CHF 120 will be charged.

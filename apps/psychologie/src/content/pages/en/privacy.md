@@ -10,9 +10,7 @@ navGroup: footer
 Responsible for data processing on this website:
 
 Florian Fahrenbach
-Affolternstrasse 10
-8908 Hedingen
-Switzerland
+Affolternstrasse 10, 8908 Hedingen, Switzerland
 
 Email: florian.fahrenbach@gmail.com
 

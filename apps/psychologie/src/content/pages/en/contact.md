@@ -28,9 +28,7 @@ Would you like to offer your employees psychological support? Contact me for a n
 Florian Fahrenbach
 Psychologist FSP
 
-Affolternstrasse 10
-8908 Hedingen
-Switzerland
+Affolternstrasse 10, 8908 Hedingen, Switzerland
 
 Sessions take place primarily online. In-person appointments are available by arrangement.
 

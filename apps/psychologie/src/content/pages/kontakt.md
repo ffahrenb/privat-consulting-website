@@ -28,9 +28,7 @@ Sie möchten Ihren Mitarbeitenden psychologische Unterstützung anbieten? Kontak
 Florian Fahrenbach
 Psychologe FSP
 
-Affolternstrasse 10
-8908 Hedingen
-Schweiz
+Affolternstrasse 10, 8908 Hedingen, Schweiz
 
 Die Beratung findet primär online statt. Termine vor Ort sind nach Absprache möglich.
 

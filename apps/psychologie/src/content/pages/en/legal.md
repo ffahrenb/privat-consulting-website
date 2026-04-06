@@ -12,11 +12,10 @@ navGroup: footer
 Florian Fahrenbach
 Psychologist FSP
 
-Affolternstrasse 10
-8908 Hedingen
-Switzerland
+Affolternstrasse 10, 8908 Hedingen, Switzerland
 
 Email: florian.fahrenbach@gmail.com
+
 Phone: +41 78 222 08 86
 
 ---

@@ -10,9 +10,7 @@ navGroup: footer
 Verantwortlich für die Datenbearbeitung auf dieser Webseite ist:
 
 Florian Fahrenbach
-Affolternstrasse 10
-8908 Hedingen
-Schweiz
+Affolternstrasse 10, 8908 Hedingen, Schweiz
 
 E-Mail: florian.fahrenbach@gmail.com
 

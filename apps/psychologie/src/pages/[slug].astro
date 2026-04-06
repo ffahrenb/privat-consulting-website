@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 const { Content } = await render(page);
 const isKontakt = page.id === 'kontakt';
+const isImpressum = page.id === 'impressum';
 ---
 
 <BaseLayout title={page.data.title} description={page.data.description}>
@@ -28,6 +29,19 @@ const isKontakt = page.id === 'kontakt';
   <section class="section">
     <div class="container prose">
       <Content />
+      {isImpressum && (
+        <div class="fsp-badge">
+          <a href="https://www.psychologie.ch" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/images/fsp-logo.png"
+              alt="FSP – Föderation der Schweizer Psychologinnen und Psychologen"
+              width="100"
+              loading="lazy"
+              class="fsp-badge-logo"
+            />
+          </a>
+        </div>
+      )}
     </div>
   </section>
 
@@ -66,5 +80,15 @@ const isKontakt = page.id === 'kontakt';
     color: var(--color-text-muted);
     font-size: 0.9375rem;
     margin-bottom: var(--space-lg);
+  }
+
+  .fsp-badge {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+  }
+
+  .fsp-badge-logo {
+    width: 100px;
+    height: auto;
   }
 </style>

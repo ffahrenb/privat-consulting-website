@@ -10,24 +10,38 @@ const { lang = 'de' } = Astro.props;
 const currentPath = Astro.url.pathname;
 const alternate = getAlternateUrl(currentPath);
 
-const navItemsDe = [
-  { label: 'Startseite', href: '/' },
-  { label: 'Über mich', href: '/ueber-mich/' },
-  { label: 'Angebot', href: '/angebot/' },
-  { label: 'Für Unternehmen', href: '/unternehmen/' },
-  { label: 'Wissenschaft', href: '/wissenschaft/' },
-  { label: 'Ablauf', href: '/ablauf/' },
+interface NavItem {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+}
+
+const navItemsDe: NavItem[] = [
+  {
+    label: 'Angebot',
+    href: '/angebot/',
+    children: [
+      { label: 'Für Einzelpersonen', href: '/angebot/' },
+      { label: 'Für Unternehmen (EAP)', href: '/unternehmen/' },
+    ],
+  },
+  { label: 'Ablauf & Konditionen', href: '/ablauf/' },
   { label: 'Kontakt', href: '/kontakt/' },
+  { label: 'Über mich', href: '/ueber-mich/' },
 ];
 
-const navItemsEn = [
-  { label: 'Home', href: '/en/' },
-  { label: 'About', href: '/en/about/' },
-  { label: 'Services', href: '/en/services/' },
-  { label: 'For Companies', href: '/en/companies/' },
-  { label: 'Science', href: '/en/science/' },
-  { label: 'Process', href: '/en/process/' },
+const navItemsEn: NavItem[] = [
+  {
+    label: 'Services',
+    href: '/en/services/',
+    children: [
+      { label: 'For Individuals', href: '/en/services/' },
+      { label: 'For Companies (EAP)', href: '/en/companies/' },
+    ],
+  },
+  { label: 'Process & Fees', href: '/en/process/' },
   { label: 'Contact', href: '/en/contact/' },
+  { label: 'About', href: '/en/about/' },
 ];
 
 const navItems = lang === 'en' ? navItemsEn : navItemsDe;
@@ -53,14 +67,37 @@ function isActive(href: string): boolean {
     <nav class="main-nav" aria-label={lang === 'en' ? 'Main navigation' : 'Hauptnavigation'}>
       <ul>
         {navItems.map(item => (
-          <li>
-            <a
-              href={item.href}
-              class:list={[{ active: isActive(item.href) }]}
-            >
-              {item.label}
-            </a>
-          </li>
+          item.children ? (
+            <li class="has-dropdown">
+              <a
+                href={item.href}
+                class:list={[{ active: isActive(item.href) || item.children.some(c => isActive(c.href)) }]}
+              >
+                {item.label}
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <ul class="dropdown">
+                {item.children.map(child => (
+                  <li>
+                    <a href={child.href} class:list={[{ active: isActive(child.href) }]}>
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li>
+              <a
+                href={item.href}
+                class:list={[{ active: isActive(item.href) }]}
+              >
+                {item.label}
+              </a>
+            </li>
+          )
         ))}
         <li class="lang-switch">
           <a href={alternate.href} title={alternate.lang === 'en' ? 'English' : 'Deutsch'}>
@@ -134,6 +171,54 @@ function isActive(href: string): boolean {
   .main-nav a.active {
     color: var(--color-accent);
     background-color: var(--color-bg-alt);
+  }
+
+  /* Dropdown */
+  .has-dropdown {
+    position: relative;
+  }
+
+  .has-dropdown > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .dropdown-arrow {
+    width: 10px;
+    height: 6px;
+    transition: transform 0.2s;
+  }
+
+  .has-dropdown:hover .dropdown-arrow,
+  .has-dropdown:focus-within .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    min-width: 200px;
+    padding: 0.25rem 0;
+    z-index: 110;
+  }
+
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    display: block;
+  }
+
+  .dropdown a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    font-size: 0.875rem;
   }
 
   .lang-switch {
@@ -234,6 +319,24 @@ function isActive(href: string): boolean {
       border-top: 1px solid var(--color-border);
       margin-top: 0.25rem;
       padding-top: 0.25rem;
+    }
+
+    .dropdown {
+      position: static;
+      border: none;
+      box-shadow: none;
+      min-width: 0;
+      padding: 0 0 0 1rem;
+    }
+
+    .has-dropdown:hover .dropdown,
+    .has-dropdown:focus-within .dropdown,
+    .dropdown {
+      display: block;
+    }
+
+    .dropdown-arrow {
+      display: none;
     }
   }
 </style>

@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Accordion from '../components/Accordion.astro';
+import { getCollection } from 'astro:content';
+
+const angebot = (await getCollection('pages')).find(p => p.id === 'angebot');
+if (!angebot) throw new Error('angebot.md not found');
+---
+
+<BaseLayout title={angebot.data.title} description={angebot.data.description}>
+  <section class="page-header">
+    <div class="container">
+      <h1>{angebot.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p>
+        Ich berate Einzelpersonen und Unternehmen an der Schnittstelle von Psychologie, Veränderung und Leistung.
+        Mein Angebot reicht von der Begleitung bei Stress und Überlastung über Berufungscoaching und Bergpsychologie
+        bis zum Employee Assistance Program für Firmen.
+      </p>
+      <p>
+        Die Beratung findet primär <strong>online per Videokonferenz (Zoom)</strong> statt.
+        Termine vor Ort sind nach Absprache möglich.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <Accordion
+        title="Stress & Recovery"
+        summary="Evidenzbasierte Begleitung bei Stress, Überlastung und fehlender Erholung."
+      >
+        <p>Stress ist eine natürliche Reaktion auf Anforderungen. Problematisch wird er, wenn die Belastung dauerhaft die eigenen Ressourcen übersteigt und Erholung ausbleibt. Dann leidet nicht nur das Wohlbefinden, sondern auch die Leistungsfähigkeit, die Beziehungen und langfristig die Gesundheit.</p>
+        <p>Meine Masterarbeit an der Universität Wien befasste sich mit den Mechanismen von Stress und Erholung und der Rolle von Persönlichkeitsfaktoren in diesem Prozess. Betreut wurde die Arbeit von Prof. Urs Nater, einem der führenden Stressforscher im deutschsprachigen Raum. Dieses wissenschaftliche Fundament bildet die Grundlage meiner Beratung in diesem Bereich.</p>
+        <p><strong>Typische Anliegen:</strong></p>
+        <ul>
+          <li>Dauerhafte Überlastung am Arbeitsplatz und fehlende Erholung</li>
+          <li>Stress durch Rollenkonflikte, hohe Erwartungen oder Veränderungen im Job</li>
+          <li>Das Gefühl, den Überblick zu verlieren</li>
+          <li>Prävention: den eigenen Umgang mit Belastung verstehen und stärken</li>
+          <li>Recovery: wirksame Erholungsstrategien entwickeln und in den Alltag integrieren</li>
+        </ul>
+        <p><strong>Mein Ansatz:</strong><br />Ich arbeite evidenzbasiert und stütze mich auf aktuelle Erkenntnisse der Stressforschung. Im Zentrum steht die Frage, wie die Balance zwischen Anforderung und Erholung wiederhergestellt oder gestärkt werden kann.</p>
+        <p><strong>Format:</strong> Einzelgespräche, 60 Minuten, online per Zoom.</p>
+      </Accordion>
+
+      <Accordion
+        title="Berufungscoaching"
+        summary="In ca. 8 Sitzungen zur eigenen Vision – ein strukturierter Coaching-Prozess."
+      >
+        <p>Sie stehen vor einer beruflichen Neuorientierung? Sie fragen sich, was Sie wirklich wollen – und was Sie brauchen, damit es Ihnen gut geht und Sie ein sinnvolles Leben führen können?</p>
+        <p>Berufungscoaching ist ein strukturierter, lösungs- und zukunftsorientierter Begleitungsprozess. In ca. 8 Sitzungen arbeiten wir gemeinsam an Ihrer Berufung – dem, was Sie im Innersten antreibt – und entwickeln daraus eine kraftvolle und konkrete Vision für Ihren nächsten Schritt.</p>
+        <h3>Die Methode</h3>
+        <p>Methodisch baut die Begleitung auf dem systemischen Coaching auf und erweitert es um Elemente aus der Lerntheorie und dem Wissensmanagement. Die zugrunde liegende Methode wurde an der Abteilung für Wissensmanagement der Wirtschaftsuniversität Wien entwickelt und wird seit über 15 Jahren erfolgreich eingesetzt und wissenschaftlich evaluiert (Theory Wave).</p>
+        <h3>Der Prozess: In ca. 8 Sitzungen zur eigenen Vision</h3>
+        <p>Der Begleitungsprozess folgt dem Dreischritt <strong>Entdecken – Stärken – Umsetzen</strong> und arbeitet entlang von drei Kernfragen:</p>
+        <ol>
+          <li><strong>Was brauche ich?</strong> – Welche Bedürfnisse sind mir wichtig, damit es mir gut geht und ich ein sinnvolles Leben führen kann?</li>
+          <li><strong>Was will ich wirklich?</strong> – Was zieht mich an, wenn ich in die Zukunft schaue? Was sind meine Sehnsüchte und Träume?</li>
+          <li><strong>Was kann ich?</strong> – Welche Fähigkeiten, Ressourcen und Erfahrungen bringe ich mit?</li>
+        </ol>
+        <p>Am Ende des Prozesses steht eine formulierte Vision – detailliert, kraftvoll und anziehend – sowie ein konkreter Plan zur Umsetzung.</p>
+        <p><strong>Für wen ist Berufungscoaching geeignet?</strong></p>
+        <ul>
+          <li>Menschen vor einem Berufswechsel</li>
+          <li>Studien- oder Schulabschluss und die Frage: Was kommt jetzt?</li>
+          <li>Wiedereinstieg nach einer Pause</li>
+          <li>Pensionierung und die Frage nach einem neuen Lebensabschnitt</li>
+          <li>Menschen, die ihre Lebensvision klären und schärfen möchten</li>
+        </ul>
+        <p><strong>Mein Hintergrund:</strong><br />Ich bin ausgebildeter systemischer Coach mit Schwerpunkt wissensbasierte Visionsentwicklung (Ausbildung bei Prof. Alexander Kaiser, WU Wien). Mehr zu den wissenschaftlichen Grundlagen: <a href="/wissenschaft/">Wissenschaft & Publikationen</a></p>
+        <p><strong>Format:</strong> Einzelgespräche, 60 Minuten, online per Zoom. Ca. 8 Sitzungen, typischerweise im wöchentlichen oder zweiwöchentlichen Rhythmus.</p>
+      </Accordion>
+
+      <Accordion
+        title="Psychologie in den Bergen"
+        summary="Mentales Training für Bergsportler:innen – Sturzangst, Blockaden, Risikoeinschätzung."
+      >
+        <p>Die Berge fordern den ganzen Menschen – körperlich, technisch und mental. Wer klettert, auf Skitour geht oder sich in alpinem Gelände bewegt, kennt Situationen, in denen der Kopf zum entscheidenden Faktor wird. Wolfgang Güllich brachte es auf den Punkt: "Das Gehirn ist der wichtigste Muskel beim Klettern."</p>
+        <p>Als Psychologe und aktiver Bergsportler vereinige ich beide Perspektiven. Ich bin SAC-Tourenleiter, Skilehrer und Kletterlehrer und engagiere mich als ehrenamtlicher Kletterlehrer für die SAC-Sektion UTO in Zürich.</p>
+        <p><strong>Typische Anliegen:</strong></p>
+        <ul>
+          <li><strong>Sturzangst beim Klettern</strong> – Laut Forschung für mehr als die Hälfte aller Kletterer der leistungsbegrenzende Faktor. Es geht nicht darum, ohne Angst zu klettern – sondern darum, mit der Angst umgehen zu können.</li>
+          <li><strong>Mentale Blockaden</strong> – Situationen, in denen Sie wissen, dass Sie es können – aber der Kopf nicht mitmacht.</li>
+          <li><strong>Risikoeinschätzung</strong> – Wie beurteile ich Risiken realistisch? Wie gehe ich mit Gruppendruck um? Wann sage ich Nein?</li>
+          <li><strong>Mentale Stärke</strong> – Konzentration, Ruhe und Selbstvertrauen in exponierten Momenten.</li>
+        </ul>
+        <p><strong>Mein Ansatz:</strong><br />Ich arbeite mit bewährten Methoden der Sportpsychologie: Graduierte Exposition, Visualisierung und mentales Training, Atemregulation, kognitive Umstrukturierung und Aktivierungsregulation.</p>
+        <p><strong>Format:</strong> Einzelgespräche, 60 Minuten, online per Zoom. Outdoor-Formate auf Anfrage.</p>
+      </Accordion>
+
+      <Accordion
+        title="Coaching für Führungskräfte"
+        summary="Rollenklärung, Entscheidungsfindung und Wirksamkeit in technologiegetriebenen Rollen."
+      >
+        <p>Führung ist in einer zunehmend digitalisierten Arbeitswelt komplexer geworden. Führungskräfte und Fachpersonen stehen vor der Herausforderung, Einfluss auszuüben, Entscheidungen unter Unsicherheit zu treffen und den Überblick zu behalten – oft ohne formale Macht und mit widersprüchlichen Anforderungen.</p>
+        <p><strong>Typische Anliegen:</strong></p>
+        <ul>
+          <li><strong>Rollenklärung</strong> – Was ist mein Auftrag, was wird von mir erwartet, und was davon will ich tatsächlich annehmen?</li>
+          <li><strong>Entscheidungsfindung</strong> – Bei wichtigen beruflichen Entscheidungen fehlt es oft nicht an Optionen, sondern an Klarheit.</li>
+          <li><strong>Umgang mit Druck und Komplexität</strong> – Hohe Erwartungen, widersprüchliche Anforderungen und ständige Veränderung.</li>
+          <li><strong>Persönliche Entwicklung</strong> – Coaching bietet einen geschützten Raum für ehrliche Reflexion.</li>
+        </ul>
+        <p><strong>Mein Ansatz:</strong><br />Ich arbeite lösungsorientiert, ressourcenfokussiert und mit einem psychologisch fundierten Methodenrepertoire. Durch meine eigene Erfahrung als Product Owner in der IT kenne ich die Herausforderungen technologiegetriebener Rollen aus erster Hand.</p>
+        <p><strong>Format:</strong> Einzelgespräche, 60 Minuten, online per Zoom.</p>
+      </Accordion>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-bg-alt);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    max-width: var(--max-width);
+    margin-bottom: 0;
+  }
+</style>

@@ -6,7 +6,7 @@ import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
   const pages = await getCollection('pages');
   return pages
-    .filter(page => page.id !== 'startseite' && !page.id.startsWith('en/'))
+    .filter(page => page.id !== 'startseite' && page.id !== 'angebot' && !page.id.startsWith('en/'))
     .map(page => ({
       params: { slug: page.id },
       props: { page },

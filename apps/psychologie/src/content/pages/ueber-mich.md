@@ -9,6 +9,8 @@ navGroup: main
 
 Mein Name ist Florian Fahrenbach. Ich bin Psychologe FSP und promovierter Sozial- und Wirtschaftswissenschaftler. In meiner Beratung unterstütze ich Einzelpersonen und Unternehmen dabei, Veränderungsprozesse klar, fundiert und menschlich zu gestalten.
 
+Aufgewachsen bei München, habe ich in Wien studiert, promoviert und geforscht, bevor ich 2021 in die Schweiz gezogen bin.
+
 Mein Weg zur Psychologie war nicht geradlinig – und genau das macht meine Perspektive aus. Ich habe Psychologie und Kognitionswissenschaft studiert, an der Wirtschaftsuniversität Wien zu Bedürfnissen und Visionsentwicklung in Organisationen geforscht und mehrere Jahre als Product Owner in der IT- und Datenwelt gearbeitet. Ich kenne die Arbeitswelt meiner Klientinnen und Klienten aus eigener Erfahrung – den Druck von Projekten, die Komplexität von Transformationsprozessen und das Gefühl, den Überblick zu verlieren.
 
 Ich kenne aber auch die andere Seite. Psychologische Begleitung hat mir selbst in schwierigen Phasen geholfen. Diese Erfahrung hat mein Verständnis für die Menschen, die zu mir kommen, entscheidend geprägt.

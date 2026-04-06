@@ -9,6 +9,8 @@ navGroup: main
 
 My name is Florian Fahrenbach. I'm a psychologist (FSP) and hold a doctorate in social and economic sciences. In my practice, I support individuals and companies in navigating change processes – with clarity, scientific rigour and a human touch.
 
+I grew up near Munich, studied, completed my doctorate and conducted research in Vienna before moving to Switzerland in 2021.
+
 My path to psychology wasn't linear – and that's exactly what shapes my perspective. I studied psychology and cognitive science, researched needs assessment and vision development at the Vienna University of Economics and Business, and spent several years working as a Product Owner in the IT and data world. I know my clients' professional reality first-hand – the pressure of projects, the complexity of transformation processes and the feeling of losing the overview.
 
 But I also know the other side. Psychological support has helped me through difficult phases. This experience has profoundly shaped my understanding of the people who come to me.

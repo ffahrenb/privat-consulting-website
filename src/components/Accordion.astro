@@ -1,0 +1,87 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+}
+
+const { title, summary } = Astro.props;
+---
+
+<details class="accordion">
+  <summary class="accordion-header">
+    <h2>{title}</h2>
+    <p class="accordion-summary">{summary}</p>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </summary>
+  <div class="accordion-content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .accordion {
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+  }
+
+  .accordion-header {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  .accordion-header::-webkit-details-marker {
+    display: none;
+  }
+
+  .accordion-header h2 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .accordion-summary {
+    color: var(--color-text-muted);
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .accordion-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .accordion-icon::before,
+  .accordion-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--color-text-muted);
+    transition: transform 0.2s;
+  }
+
+  .accordion-icon::before {
+    width: 2px;
+    height: 14px;
+    top: 3px;
+    left: 9px;
+  }
+
+  .accordion-icon::after {
+    width: 14px;
+    height: 2px;
+    top: 9px;
+    left: 3px;
+  }
+
+  details[open] .accordion-icon::before {
+    transform: rotate(90deg);
+  }
+
+  .accordion-content {
+    padding-top: var(--space-sm);
+  }
+</style>

@@ -1,27 +1,23 @@
 ---
 title: Home
-description: "The human side of data strategy – Florian Fahrenbach, organisational consultant, psychologist and data engineer."
+description: "At the intersection of people, technology & organisation – Florian Fahrenbach, organisational consultant, psychologist and data engineer."
 navOrder: 1
 navGroup: hidden
 ---
 
 ## What I do differently
 
-Many organisations invest heavily in data strategies, analytics platforms and governance structures. The technology gets built, roles get defined, policies get written. And yet, not much changes. Data stewards don't live their roles, business units see no value, the data team feels isolated. Dashboards exist, but nobody makes decisions based on the data.
+When organisations introduce new technologies, make better use of data or digitalise processes, more changes than the IT. Roles shift, communication patterns change, and ways of working are disrupted. Governance structures don't take hold, business units and data teams talk past each other, and transformation stalls.
 
-The problem is rarely technical. It's organisational and psychological.
+The problem is rarely technical. It lies in the dynamics between people, technology and organisation — in what makes sociotechnical systems tick.
 
-I know this dynamic – not from theory, but from my own experience. As a Product Owner Data & Analytics, I built a company-wide data governance programme from scratch: operating model, roles, data strategy, data catalogue, data quality controls, data community. At the same time, I researched organisational learning and needs assessment at the Vienna University of Economics and Business.
-
-This dual perspective – data practitioner and organisational psychologist – is what sets my consulting apart. I'm not an external consultant who presents frameworks and leaves. I work with you in the process.
+I understand these dynamics from two perspectives: as a doctoral-level organisational psychologist who researched organisational learning and needs assessment, and as a Product Owner Data & Analytics who built a company-wide data governance programme from scratch. I work at the intersection — not above it.
 
 ---
 
 ## Who I work with
 
-- Organisations implementing data and digital strategies who want to actively shape the human side
-- CDOs, CTOs, data leads and executives in technology-driven transformation processes
-- Teams working at the intersection of business and data/IT
+- Leaders in data-adjacent roles – CDOs, CTOs, data leads, digitalisation project leads
+- Teams at the intersection of business and IT
+- Organisations in technology-driven transformation processes
 - Project leads for ERP, CRM or data warehouse implementations
-
----

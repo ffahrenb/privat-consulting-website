@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Accordion from '../components/Accordion.astro';
+import { getCollection } from 'astro:content';
+
+const leistungen = (await getCollection('pages')).find(p => p.id === 'leistungen');
+if (!leistungen) throw new Error('leistungen.md not found');
+---
+
+<BaseLayout title={leistungen.data.title} description={leistungen.data.description}>
+  <section class="page-header">
+    <div class="container">
+      <h1>{leistungen.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <Accordion
+        title="Führung & Zusammenarbeit"
+        summary="Coaching für Führungskräfte in datennahen Rollen. Teamentwicklung an der Schnittstelle von Business und IT."
+      >
+        <p>Führungskräfte in datennahen Rollen stehen vor besonderen Herausforderungen: Einfluss ausüben ohne formale Macht, übersetzen zwischen Fachbereich und IT, Entscheidungen treffen unter Unsicherheit. Teams an der Schnittstelle von Business und IT arbeiten mit unterschiedlichen Sprachen, Erwartungen und Erfolgskriterien. Das erzeugt Reibung — oft mehr als nötig.</p>
+
+        <h3>Was ich bearbeite</h3>
+        <p><strong>Coaching für Führungskräfte</strong> – Neue Rolle als CDO, Data Lead oder Projektleitung — und die Frage, wie man Einfluss aufbaut. Umgang mit Widerstand, Komplexität und der Doppelrolle als Betroffene:r und Treiber:in von Veränderung. Reflexion der eigenen Führungshaltung und Balance zwischen operativem Alltag und strategischer Führung.</p>
+        <p><strong>Teamentwicklung</strong> – Rollen, Erwartungen und Zuständigkeiten klären, insbesondere in Matrixorganisationen. Teamdynamik verstehen und produktiv gestalten. Konflikte bearbeiten, bevor sie eskalieren. Gemeinsame Ziele erarbeiten — basierend auf den Bedürfnissen der Beteiligten.</p>
+        <p><strong>Rollenklärung</strong> – Digitale Transformation verschiebt Zuständigkeiten. Wer entscheidet über Datenqualität? Wer verantwortet einen Prozess End-to-End? Ich unterstütze bei der Klärung dieser Fragen — nicht nur auf dem Papier, sondern im gelebten Alltag.</p>
+
+        <h3>Wie ich arbeite</h3>
+        <p>Ich kenne diese Rollen aus eigener Erfahrung als Product Owner in der IT. Mein Ansatz verbindet psychologisches Fachwissen mit dem Verständnis für die spezifischen Anforderungen technologiegetriebener Führungspositionen. Für die Teamentwicklung setze ich Methoden der Bedürfnisklärung und Visionsentwicklung ein, die ich selbst wissenschaftlich erforscht habe.</p>
+
+        <h3>Format</h3>
+        <p>Einzelcoaching (60 Min., online via Zoom), moderierte Workshops, Teambegleitung über einen definierten Zeitraum.</p>
+      </Accordion>
+
+      <Accordion
+        title="Veränderung & Architektur"
+        summary="Change-Begleitung bei Systemeinführungen und digitaler Transformation. Enterprise Architecture als Werkzeug für strategische Entscheidungen."
+      >
+        <p>Digitale Transformation ist kein IT-Projekt. Sie verändert Rollen, Verantwortlichkeiten, Arbeitsweisen und Machtverhältnisse. Wenn ein neues System live geht und die Hälfte der Belegschaft nicht versteht warum, ist die Antwort selten ein besseres Training — sondern ein besserer Prozess der Beteiligung und Klärung.</p>
+
+        <h3>Was ich bearbeite</h3>
+        <p><strong>Change-Begleitung bei Systemeinführungen</strong> – ERP, CRM, Data Warehouse, BI-Tools: Jede Systemeinführung verändert, wie Menschen arbeiten. Ich begleite den menschlichen Teil dieser Veränderung — von der Kommunikationsstrategie über den Umgang mit Widerstand bis zur Nachbetreuung nach dem Go-Live.</p>
+        <p><strong>Enterprise Architecture & Prozesslandschaft</strong> – Geschäftsprozesse, Datenobjekte, Applikationen, Schnittstellen und Integrationen modellieren und strategisch mit der IT-Roadmap verbinden. Kernprozesse End-to-End analysieren, Verantwortlichkeiten und KPIs klären. Ich arbeite mit Standards wie ArchiMate und Tools wie BOC Adoit.</p>
+        <p><strong>Widerstand verstehen und nutzen</strong> – Widerstand ist keine Störung, sondern Information. Er zeigt, wo Bedürfnisse nicht gehört, Ängste nicht adressiert oder Beteiligung nicht ermöglicht wurde. Meine Forschung an der WU Wien hat sich intensiv mit der Frage beschäftigt, wie man Bedürfnisse in sozialen Systemen systematisch erfassen und priorisieren kann — dieses Wissen setze ich ein, bevor Widerstand zum Problem wird.</p>
+
+        <h3>Wie ich arbeite</h3>
+        <p>Ich verbinde psychologisches Fachwissen mit konkretem Verständnis der technischen und organisationalen Realität. In meiner operativen Arbeit habe ich Kernprozesse End-to-End neu kartiert, Enterprise Architecture modelliert und ein Data-Governance-Programm aufgebaut. Ich spreche sowohl die Sprache der IT als auch die der Fachbereiche.</p>
+        <p>Für komplexe ICT-Entscheidungen setze ich <strong>VERITAS</strong> ein — eine strukturierte Methode, die implizite Annahmen hinter Architektur- und Strategieentscheidungen als testbare Hypothesen formuliert und faktenbasiert validiert. <a href="/methoden/veritas/">→ Mehr zu VERITAS</a></p>
+
+        <h3>Format</h3>
+        <p>Beratung, Moderation, Workshops, Coaching von Projektleitungen. Begleitung über mehrere Monate möglich.</p>
+      </Accordion>
+
+      <Accordion
+        title="Datenkultur & Governance"
+        summary="Datenkultur aufbauen, Governance verankern, Brücken zwischen Fachbereich und Datenteam schlagen."
+      >
+        <p>Datenkultur entsteht nicht durch ein Manifest. Sie entsteht, wenn Menschen verstehen, warum Daten relevant sind, wenn Rollen klar sind und wenn datengetriebenes Arbeiten im Alltag erlebbar wird. Viele Organisationen haben Rollen definiert, ein Glossar erstellt und ein Governance-Board eingerichtet — aber es bleibt Formalismus.</p>
+
+        <h3>Was ich bearbeite</h3>
+        <p><strong>Datenkultur aufbauen</strong> – Räume schaffen, in denen datengetriebenes Arbeiten erlebbar wird. Den Nutzen von Daten für die Fachbereiche sichtbar machen. Eine Data Community aufbauen, die Governance trägt statt erduldet.</p>
+        <p><strong>Data Governance verankern</strong> – Operating Model, Rollen (Data Owner, Data Stewards, Governance Board), Datenstrategie, Data Catalog, Datenqualitätskontrollen. Nicht als einmaliges Projekt, sondern als etwas, das Menschen als sinnvoll erleben und aktiv tragen.</p>
+        <p><strong>Brücken zwischen Fachbereich und Datenteam</strong> – Die grösste Hürde in vielen Datenprojekten ist nicht die Technologie, sondern die Kommunikation. Fachbereiche und Datenteams haben unterschiedliche Erwartungen und sehen unterschiedlichen Nutzen. Ich moderiere diese Schnittstelle und schaffe ein gemeinsames Verständnis.</p>
+        <p><strong>Business-IT-Alignment</strong> – Die Brücke zwischen Geschäftsanforderungen und IT-Architektur schlagen. Projekt-Portfolio und Roadmap-Entscheidungen auf eine fundierte Grundlage stellen.</p>
+
+        <h3>Wie ich arbeite</h3>
+        <p>Als Product Owner Data & Analytics habe ich ein unternehmensweites Data-Governance-Programm von Grund auf aufgebaut: Operating Model, Rollen, Datenstrategie, Data Catalog, Datenqualitätskontrollen, Data Community. Ich weiss, wie es sich anfühlt, wenn ein Stewardship-Modell auf dem Papier funktioniert, aber in der Organisation nicht ankommt — und was es braucht, damit es funktioniert.</p>
+        <p>Für die datengetriebene Bestandsaufnahme setze ich <strong>BI Clarity</strong> ein — ein automatisiertes Power BI Governance Audit, das Ihre gesamte Berichtslandschaft auf Modell-, Report- und Workspace-Ebene analysiert und mit klaren Handlungsempfehlungen versieht. <a href="/methoden/bi-clarity/">→ Mehr zu BI Clarity</a></p>
+
+        <h3>Format</h3>
+        <p>Beratung, Moderation, Workshops. Begleitung über mehrere Monate möglich.</p>
+      </Accordion>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-bg-alt);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    max-width: var(--max-width);
+    margin-bottom: 0;
+  }
+</style>

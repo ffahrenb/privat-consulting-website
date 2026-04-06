@@ -1,25 +1,23 @@
 ---
 title: Startseite
-description: "Die menschliche Seite der Datenstrategie – Florian Fahrenbach, Organisationsberater, Psychologe und Data Engineer."
+description: "An der Schnittstelle von Mensch, Technologie & Organisation – Florian Fahrenbach, Organisationsberater, Psychologe und Data Engineer."
 navOrder: 1
 navGroup: hidden
 ---
 
 ## Was ich anders mache
 
-Viele Organisationen investieren erheblich in Datenstrategien, Analytics-Plattformen und Governance-Strukturen. Die Technik wird aufgebaut, Rollen werden definiert, Policies geschrieben. Und trotzdem bewegt sich wenig.
+Wenn Organisationen neue Technologien einführen, Daten stärker nutzen oder Prozesse digitalisieren, verändert sich mehr als die IT. Es verändern sich Rollen, Kommunikationswege und Arbeitsweisen. Governance-Strukturen greifen nicht, Fachbereiche und Datenteams sprechen aneinander vorbei, der Wandel stockt.
 
-Das Problem ist selten technisch. Es ist organisational und psychologisch.
+Das Problem ist selten technisch. Es liegt in der Dynamik zwischen Menschen, Technologie und Organisation — in dem, was soziotechnische Systeme ausmacht.
 
-Ich kenne diese Dynamik – nicht aus der Theorie, sondern aus eigener Erfahrung. Als Product Owner Data & Analytics habe ich ein unternehmensweites Data-Governance-Programm aufgebaut: Operating Model, Rollen, Datenstrategie, Data Catalog, Datenqualitätskontrollen, Data Community. Gleichzeitig habe ich an der Wirtschaftsuniversität Wien zu organisationalem Lernen und Bedürfnisklärung in sozialen Systemen geforscht.
-
-Diese doppelte Perspektive – Data-Praktiker und Organisationspsychologe – macht meine Beratung aus. Ich bin kein externer Berater, der Frameworks präsentiert und wieder geht. Ich arbeite mit Ihnen im Prozess.
+Diese Dynamik verstehe ich aus zwei Perspektiven: Als promovierter Organisationspsychologe habe ich zu organisationalem Lernen und Bedürfnisklärung geforscht. Als Product Owner Data & Analytics habe ich ein unternehmensweites Data-Governance-Programm von Grund auf aufgebaut. Ich arbeite an der Schnittstelle — nicht darüber.
 
 ---
 
 ## Für wen ich arbeite
 
-- Organisationen, die Daten- und Digitalstrategien umsetzen und die menschliche Seite aktiv gestalten wollen
-- CDOs, CTOs, Data Leads und Führungskräfte in technologiegetriebenen Veränderungsprozessen
-- Teams, die an der Schnittstelle von Fachbereich und Daten/IT zusammenarbeiten
+- Führungskräfte in datennahen Rollen – CDOs, CTOs, Data Leads, Projektleitungen Digitalisierung
+- Teams an der Schnittstelle von Fachbereich und IT
+- Organisationen in technologiegetriebenen Veränderungsprozessen
 - Projektleitungen für ERP-, CRM- oder Data-Warehouse-Einführungen

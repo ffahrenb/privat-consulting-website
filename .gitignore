@@ -31,3 +31,4 @@ docs/
 # editor and tool config
 .claude/
 .vscode/
+CLAUDE.md

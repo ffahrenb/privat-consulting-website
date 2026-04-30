@@ -27,3 +27,7 @@ pnpm-debug.log*
 
 # project notes and documentation
 docs/
+
+# editor and tool config
+.claude/
+.vscode/

@@ -1,0 +1,115 @@
+---
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = 'de' } = Astro.props;
+
+const schwerpunkteDe = [
+  {
+    title: 'Stress & Recovery',
+    text: 'Wenn die Belastung dauerhaft die eigenen Ressourcen übersteigt und Erholung ausbleibt. Ich unterstütze Sie dabei, Stressmechanismen zu verstehen und wirksame Strategien für Erholung und Prävention zu entwickeln.',
+    href: '/angebot/#stress--recovery',
+  },
+  {
+    title: 'Berufungscoaching',
+    text: 'Sie stehen vor einer Neuorientierung und suchen Klarheit? In einem strukturierten Prozess von ca. 8 Sitzungen arbeiten wir an den Fragen: Was brauche ich? Was will ich wirklich? Was kann ich?',
+    href: '/angebot/#berufungscoaching',
+  },
+  {
+    title: 'Psychologie in den Bergen',
+    text: 'Sturzangst, mentale Blockaden, Risikoeinschätzung – psychologische Beratung für Bergsportlerinnen und Bergsportler. Als SAC-Tourenleiter, Skilehrer und Kletterlehrer kenne ich die Situationen aus eigener Erfahrung.',
+    href: '/angebot/#psychologie-in-den-bergen',
+  },
+  {
+    title: 'Coaching für Führungskräfte',
+    text: 'Individuelle Begleitung für Führungskräfte und Fachpersonen in anspruchsvollen beruflichen Situationen – von Rollenklärung über Entscheidungsfindung bis zum Umgang mit Druck.',
+    href: '/angebot/#coaching-für-führungskräfte--fachpersonen',
+  },
+  {
+    title: 'Für Unternehmen: Employee Assistance',
+    text: 'Ihr Unternehmen möchte seinen Mitarbeitenden psychologische Unterstützung anbieten? Ich biete ein vertrauliches Beratungsangebot für Firmen – insbesondere im Technologie- und IT-Umfeld.',
+    href: '/unternehmen/',
+  },
+];
+
+const schwerpunkteEn = [
+  {
+    title: 'Stress & Recovery',
+    text: 'When demands consistently exceed your resources and recovery fails to happen. I help you understand stress mechanisms and develop effective strategies for recovery and prevention.',
+    href: '/en/services/#stress--recovery',
+  },
+  {
+    title: 'Vocation Coaching',
+    text: 'Facing a professional reorientation and seeking clarity? In a structured process of approx. 8 sessions, we work on the questions: What do I need? What do I really want? What can I do?',
+    href: '/en/services/#vocation-coaching',
+  },
+  {
+    title: 'Mountain Psychology',
+    text: 'Fear of falling, mental blocks, risk assessment – psychological counselling for mountain athletes. As an SAC mountain guide, ski instructor and climbing instructor, I know these situations first-hand.',
+    href: '/en/services/#mountain-psychology',
+  },
+  {
+    title: 'Coaching for Leaders',
+    text: 'Individual support for leaders and professionals in demanding work situations – from role clarification and decision-making to dealing with pressure and complexity.',
+    href: '/en/services/#coaching-for-leaders--professionals',
+  },
+  {
+    title: 'For Companies: Employee Assistance',
+    text: 'Want to offer your employees professional psychological support? I provide a confidential counselling programme for companies – particularly in technology and IT environments.',
+    href: '/en/companies/',
+  },
+];
+
+const schwerpunkte = lang === 'en' ? schwerpunkteEn : schwerpunkteDe;
+---
+
+<div class="schwerpunkte-grid">
+  {schwerpunkte.map(item => (
+    <a href={item.href} class="schwerpunkt-card">
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </a>
+  ))}
+</div>
+
+<style>
+  .schwerpunkte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: var(--max-width-wide);
+    margin: var(--space-lg) auto 0;
+  }
+
+  .schwerpunkt-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-md);
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  }
+
+  .schwerpunkt-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(26, 58, 74, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .schwerpunkt-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .schwerpunkt-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>

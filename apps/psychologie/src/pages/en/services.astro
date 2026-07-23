@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Accordion from '../../components/Accordion.astro';
+import { getCollection } from 'astro:content';
+
+const services = (await getCollection('pages')).find(p => p.id === 'en/services');
+if (!services) throw new Error('en/services.md not found');
+---
+
+<BaseLayout title={services.data.title} description={services.data.description} lang="en">
+  <section class="page-header">
+    <div class="container">
+      <h1>{services.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p>
+        I counsel individuals and companies at the intersection of psychology, change and performance.
+        My services range from support with stress and burnout through vocation coaching and mountain psychology
+        to an Employee Assistance Programme for companies.
+      </p>
+      <p>
+        Sessions take place primarily <strong>online via video conference (Zoom)</strong>.
+        In-person appointments are available by arrangement.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <Accordion
+        title="Stress & Recovery"
+        summary="Evidence-based support for stress, overload and lack of recovery."
+      >
+        <p>Stress is a natural response to demands. It becomes problematic when the strain consistently exceeds one's resources and recovery fails to happen. This affects not only well-being, but also performance, relationships and long-term health.</p>
+        <p>My master's thesis at the University of Vienna examined the mechanisms of stress and recovery and the role of personality factors in this process. The thesis was supervised by Prof. Urs Nater, one of the leading stress researchers in the German-speaking world.</p>
+        <p><strong>Typical concerns:</strong></p>
+        <ul>
+          <li>Persistent work overload and lack of recovery</li>
+          <li>Stress from role conflicts, high expectations or changes at work</li>
+          <li>The feeling of losing the overview</li>
+          <li>Prevention: understanding and strengthening your own approach to stress</li>
+          <li>Recovery: developing effective recuperation strategies and integrating them into daily life</li>
+        </ul>
+        <p><strong>My approach:</strong><br />I work evidence-based, drawing on current insights from stress research. The central question is how to restore or strengthen the balance between demands and recovery.</p>
+        <p><strong>Format:</strong> Individual sessions, 60 minutes, online via Zoom.</p>
+      </Accordion>
+
+      <Accordion
+        title="Vocation Coaching"
+        summary="Approximately 8 sessions to your personal vision – a structured coaching process."
+      >
+        <p>Are you facing a professional reorientation? Are you asking yourself what you really want – and what you need to feel well and lead a meaningful life?</p>
+        <p>Vocation coaching is a structured, solution- and future-oriented process. In approximately 8 sessions, we work together on your vocation – what drives you at your core – and develop from it a powerful and concrete vision for your next step.</p>
+        <h3>The method</h3>
+        <p>The process builds on systemic coaching and extends it with elements from learning theory and knowledge management. The underlying method was developed at the Department of Knowledge Management at the Vienna University of Economics and Business and has been successfully applied and scientifically evaluated for over 15 years (Theory Wave).</p>
+        <h3>The process: approximately 8 sessions to your personal vision</h3>
+        <p>The process follows the three-step approach <strong>Discover – Strengthen – Implement</strong> and works along three core questions:</p>
+        <ol>
+          <li><strong>What do I need?</strong> – Which needs are important to me so that I feel well and can lead a meaningful life?</li>
+          <li><strong>What do I really want?</strong> – What draws me when I look to the future? What are my aspirations and dreams?</li>
+          <li><strong>What can I do?</strong> – What skills, resources and experiences do I bring?</li>
+        </ol>
+        <p>At the end of the process, you'll have a formulated vision – detailed, powerful and compelling – along with a concrete plan for implementation.</p>
+        <p><strong>Who is vocation coaching suitable for?</strong></p>
+        <ul>
+          <li>People facing a career change</li>
+          <li>Completing school or university and the question: what's next?</li>
+          <li>Re-entering the workforce after a break</li>
+          <li>Retirement and the question of a new chapter</li>
+          <li>Anyone who wants to clarify and sharpen their life vision</li>
+        </ul>
+        <p><strong>My background:</strong><br />I'm a trained systemic coach specialising in knowledge-based vision development (training with Prof. Alexander Kaiser, WU Vienna). More on the scientific foundations: <a href="/en/science/">Science & Publications</a></p>
+        <p><strong>Format:</strong> Individual sessions, 60 minutes, online via Zoom. Approx. 8 sessions, typically at weekly or biweekly intervals.</p>
+      </Accordion>
+
+      <Accordion
+        title="Mountain Psychology"
+        summary="Mental training for mountain athletes – fear of falling, mental blocks, risk assessment."
+      >
+        <p>Mountains challenge the whole person – physically, technically and mentally. Anyone who climbs, goes ski touring or moves in alpine terrain knows situations where the mind becomes the decisive factor. Wolfgang Güllich put it simply: "The brain is the most important muscle in climbing."</p>
+        <p>As a psychologist and active mountain athlete, I bring both perspectives together. I'm an SAC mountain guide, ski instructor and climbing instructor, and I volunteer as a climbing instructor for SAC Section UTO in Zurich.</p>
+        <p><strong>Typical concerns:</strong></p>
+        <ul>
+          <li><strong>Fear of falling when climbing</strong> – According to research, the performance-limiting factor for more than half of all climbers. The point is not to climb without fear – but to learn to manage it.</li>
+          <li><strong>Mental blocks</strong> – Situations where you know you can do it – but your mind won't cooperate.</li>
+          <li><strong>Risk assessment</strong> – How do I assess risks realistically? How do I handle group pressure? When do I say no?</li>
+          <li><strong>Mental strength</strong> – Focus, calm and confidence in exposed moments.</li>
+        </ul>
+        <p><strong>My approach:</strong><br />I work with proven methods from sport psychology: graded exposure, visualisation and mental training, breathing regulation, cognitive restructuring and activation regulation.</p>
+        <p><strong>Format:</strong> Individual sessions, 60 minutes, online via Zoom. Outdoor formats on request.</p>
+      </Accordion>
+
+      <Accordion
+        title="Coaching for Leaders"
+        summary="Role clarification, decision-making and effectiveness in technology-driven roles."
+      >
+        <p>Leadership has become more complex in an increasingly digitalised world. Leaders and professionals face the challenge of exerting influence, making decisions under uncertainty and keeping the overview – often without formal authority and with conflicting demands.</p>
+        <p><strong>Typical concerns:</strong></p>
+        <ul>
+          <li><strong>Role clarification</strong> – What is my mandate, what's expected of me, and which of those expectations do I actually want to accept?</li>
+          <li><strong>Decision-making</strong> – In important professional decisions, the problem is often not a lack of options but a lack of clarity.</li>
+          <li><strong>Dealing with pressure and complexity</strong> – High expectations, conflicting demands and constant change.</li>
+          <li><strong>Personal development</strong> – Coaching offers a protected space for honest reflection.</li>
+        </ul>
+        <p><strong>My approach:</strong><br />I work solution-oriented, resource-focused and with a psychologically grounded set of methods. Through my own experience as a Product Owner in IT, I know the challenges of technology-driven roles first-hand.</p>
+        <p><strong>Format:</strong> Individual sessions, 60 minutes, online via Zoom.</p>
+      </Accordion>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-bg-alt);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    max-width: var(--max-width);
+    margin-bottom: 0;
+  }
+</style>

@@ -1,17 +1,17 @@
 {
-  "name": "consulting-fahrenbach",
+  "name": "fahrenbach-web",
+  "private": true,
   "type": "module",
   "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/sitemap": "^3.3.1",
-    "astro": "^6.1.3",
-    "esbuild-wasm": "^0.27.5"
+    "dev:consulting": "bun --cwd apps/consulting run dev",
+    "dev:psychologie": "bun --cwd apps/psychologie run dev",
+    "build:consulting": "bun --cwd apps/consulting run build",
+    "build:psychologie": "bun --cwd apps/psychologie run build",
+    "build": "bun run build:consulting && bun run build:psychologie"
   },
   "overrides": {
     "esbuild": "npm:esbuild-wasm@^0.27.5"

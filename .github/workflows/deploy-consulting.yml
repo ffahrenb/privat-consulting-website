@@ -1,4 +1,10 @@
-name: Deploy to GitHub Pages
+name: Deploy consulting.fahrenba.ch
+
+# Native GitHub Pages deploy for THIS repo's Pages site (consulting.fahrenba.ch).
+# Unchanged from the pre-monorepo workflow except the build now runs in the
+# bun workspace and the artifact path moved from `dist` to `apps/consulting/dist`.
+# One GitHub repo serves exactly one Pages site, so only consulting deploys natively
+# here; psychologie is pushed to its own repo's gh-pages branch (see deploy-psychologie.yml).
 
 on:
   push:
@@ -28,13 +34,15 @@ jobs:
         with:
           bun-version: latest
 
+      # Install the whole workspace from the repo root so the esbuild->esbuild-wasm
+      # override (root package.json) is honoured.
       - run: bun install
 
-      - run: bun run build
+      - run: bun run build:consulting
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: apps/consulting/dist
 
   deploy:
     needs: build

@@ -2,7 +2,7 @@ import './src/styles/theme.css';
 import type { SiteConfig } from '@fahrenbach/ui/types';
 
 export { default as Header } from './src/components/Header.astro';
-export { default as Footer } from './src/components/Footer.astro';
+export { default as Footer } from '@fahrenbach/ui/components/Footer.astro';
 
 const site: SiteConfig = {
   siteUrl: 'https://psychologie.fahrenba.ch',
@@ -145,6 +145,7 @@ const site: SiteConfig = {
   },
 
   badge: {
+    href: 'https://www.psychologie.ch',
     imageSrc: '/images/fsp-logo-white.png',
     imageAlt: {
       de: 'FSP – Föderation der Schweizer Psychologinnen und Psychologen',

@@ -11,4 +11,9 @@
      inline in SchwerpunkteGrid.astro; needed as a token now that CardGrid
      is a single shared component. */
   --color-primary-shadow: rgba(26, 46, 61, 0.08);
+
+  /* Footer divider shadows, previously hardcoded rgba(--color-bg) literals
+     inline in Footer.astro; needed as tokens now that Footer is shared. */
+  --color-bg-border: rgba(245, 246, 248, 0.15);
+  --color-bg-border-subtle: rgba(245, 246, 248, 0.1);
 }

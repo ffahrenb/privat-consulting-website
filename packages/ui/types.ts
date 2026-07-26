@@ -25,6 +25,7 @@ export interface FooterLink {
 }
 
 export interface FooterBadge {
+  href: string;
   imageSrc: string;
   imageAlt: Localized<string>;
   text: Localized<string>;

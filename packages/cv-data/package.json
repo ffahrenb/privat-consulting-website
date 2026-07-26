@@ -1,0 +1,18 @@
+{
+  "name": "@fahrenbach/cv-data",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Publications data for the fahrenba.ch sites, generated from the CV's publications.bib (source of truth: ffahrenb/fahrenbach_cv).",
+  "exports": {
+    ".": "./index.ts",
+    "./publications.json": "./publications.json"
+  },
+  "scripts": {
+    "generate": "bun run generate.ts"
+  },
+  "dependencies": {
+    "@citation-js/core": "^0.8.2",
+    "@citation-js/plugin-bibtex": "^0.8.2"
+  }
+}

@@ -7,10 +7,10 @@
     "apps/*"
   ],
   "scripts": {
-    "dev:consulting": "bun --cwd apps/consulting run dev",
-    "dev:psychologie": "bun --cwd apps/psychologie run dev",
-    "build:consulting": "bun --cwd apps/consulting run build",
-    "build:psychologie": "bun --cwd apps/psychologie run build",
+    "dev:consulting": "bun run --cwd apps/consulting dev",
+    "dev:psychologie": "bun run --cwd apps/psychologie dev",
+    "build:consulting": "bun run --cwd apps/consulting build",
+    "build:psychologie": "bun run --cwd apps/psychologie build",
     "build": "bun run build:consulting && bun run build:psychologie"
   },
   "overrides": {

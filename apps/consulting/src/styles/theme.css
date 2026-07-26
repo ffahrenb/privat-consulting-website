@@ -1,0 +1,9 @@
+/* Consulting palette — the 5 tokens that differ between apps. */
+
+:root {
+  --color-primary: #1a2e3d;
+  --color-accent: #2e7d6a;
+  --color-accent-hover: #256b5a;
+  --color-bg: #f5f6f8;
+  --color-bg-alt: #e8eaee;
+}

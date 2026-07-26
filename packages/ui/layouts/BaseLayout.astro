@@ -1,10 +1,7 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/theme.css';
-import '@fahrenbach/ui/global.css';
-import type { Lang } from '../i18n';
-import { getAlternateUrl } from '../i18n';
+import site, { Header, Footer } from '@site';
+import '../global.css';
+import { getAlternateUrl, type Lang } from '../i18n';
 
 interface Props {
   title: string;
@@ -16,12 +13,12 @@ const { title, description, lang = 'de' } = Astro.props;
 
 const homeTitles = { de: 'Startseite', en: 'Home' };
 const pageTitle = title === homeTitles[lang]
-  ? 'Florian Fahrenbach – Consulting'
-  : `${title} – Florian Fahrenbach, Consulting`;
+  ? `${site.name} – ${site.tagline[lang]}`
+  : `${title} – ${site.name}, ${site.tagline[lang]}`;
 
 const currentPath = Astro.url.pathname;
-const alternate = getAlternateUrl(currentPath);
-const siteUrl = 'https://consulting.fahrenba.ch';
+const alternate = getAlternateUrl(currentPath, site.slugMap);
+const siteUrl = site.siteUrl;
 ---
 
 <!doctype html>

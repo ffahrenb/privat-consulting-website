@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@fahrenbach/ui/layouts/BaseLayout.astro';
 import ContactForm from '@fahrenbach/ui/components/ContactForm.astro';
+import Publications from '@fahrenbach/ui/components/Publications.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -17,6 +18,7 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 const isContact = page.id === 'en/contact';
 const isLegal = page.id === 'en/legal';
+const isScience = page.id === 'en/science';
 ---
 
 <BaseLayout title={page.data.title} description={page.data.description} lang="en">
@@ -42,6 +44,7 @@ const isLegal = page.id === 'en/legal';
           </a>
         </div>
       )}
+      {isScience && <Publications lang="en" filter="all" />}
     </div>
   </section>
 

@@ -21,7 +21,7 @@ export default defineConfig({
       },
     },
     ssr: {
-      noExternal: ['@fahrenbach/ui'],
+      noExternal: ['@fahrenbach/ui', '@fahrenbach/cv-data'],
     },
   },
 });

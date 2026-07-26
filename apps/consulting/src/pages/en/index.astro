@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@fahrenbach/ui/layouts/BaseLayout.astro';
-import SchwerpunkteGrid from '../../components/SchwerpunkteGrid.astro';
+import CardGrid from '@fahrenbach/ui/components/CardGrid.astro';
 import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import portrait from '../../assets/portrait.jpg';
@@ -47,7 +47,7 @@ const { Content } = await render(home);
   <section class="section section-alt">
     <div class="container">
       <h2 class="section-heading">Services</h2>
-      <SchwerpunkteGrid lang="en" />
+      <CardGrid lang="en" />
     </div>
   </section>
 

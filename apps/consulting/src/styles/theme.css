@@ -6,4 +6,9 @@
   --color-accent-hover: #256b5a;
   --color-bg: #f5f6f8;
   --color-bg-alt: #e8eaee;
+
+  /* Card-hover shadow, previously a hardcoded rgba(--color-primary) literal
+     inline in SchwerpunkteGrid.astro; needed as a token now that CardGrid
+     is a single shared component. */
+  --color-primary-shadow: rgba(26, 46, 61, 0.08);
 }

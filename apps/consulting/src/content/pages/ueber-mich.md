@@ -33,13 +33,9 @@ An der Wirtschaftsuniversität Wien habe ich über fünf Jahre zu organisational
 
 Meine Forschung befasste sich mit der Frage, wie Organisationen ihre Bedürfnisse erkennen, wie Widerstand gegen Veränderung entsteht und wie Visionsentwicklung als Lernprozess gestaltet werden kann. Diese Erkenntnisse setze ich direkt in meiner Beratung ein – insbesondere dort, wo Governance-Programme und Veränderungsprojekte auf menschlichen Widerstand treffen.
 
-**Ausgewählte Publikationen:**
-- Kaiser, A., Fahrenbach, F. & Martinez, H. (2021). Creating Shared Visions in Organizations. *HICSS*.
-- Human, S., Fahrenbach, F., Kragulj, F. & Savenkov, V. (2017). Ontology for Representing Human Needs. *KESW*. **Best Paper Award.**
-- Kaiser, A., Fahrenbach, F., Kragulj, F. & Grisold, T. (2018). Towards a Prioritization of Needs to Support Decision Making in Organizational Change Processes. *HICSS*.
-- Fahrenbach, F. & Kragulj, F. (2019). The Ever-Changing Personality: Revisiting Triple-Loop Learning. *The Learning Organization*.
+<!-- PUBLICATIONS -->
 
-Insgesamt 16 peer-reviewed Publikationen. Vollständige Liste: [Google Scholar](https://scholar.google.com/citations?user=L1OzFcwAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Florian-Fahrenbach)
+Insgesamt 17 peer-reviewed Publikationen. Vollständige Liste: [Google Scholar](https://scholar.google.com/citations?user=L1OzFcwAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Florian-Fahrenbach)
 
 ---
 

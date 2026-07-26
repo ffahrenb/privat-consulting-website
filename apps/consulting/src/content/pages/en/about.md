@@ -33,13 +33,9 @@ At the Vienna University of Economics and Business (WU Vienna), I spent over fiv
 
 My research focused on how organisations recognise their needs, how resistance to change emerges, and how vision development can be designed as a learning process. I apply these insights directly in my consulting – particularly where governance programmes and change projects encounter human resistance.
 
-**Selected publications:**
-- Kaiser, A., Fahrenbach, F. & Martinez, H. (2021). Creating Shared Visions in Organizations. *HICSS*.
-- Human, S., Fahrenbach, F., Kragulj, F. & Savenkov, V. (2017). Ontology for Representing Human Needs. *KESW*. **Best Paper Award.**
-- Kaiser, A., Fahrenbach, F., Kragulj, F. & Grisold, T. (2018). Towards a Prioritization of Needs to Support Decision Making in Organizational Change Processes. *HICSS*.
-- Fahrenbach, F. & Kragulj, F. (2019). The Ever-Changing Personality: Revisiting Triple-Loop Learning. *The Learning Organization*.
+<!-- PUBLICATIONS -->
 
-16 peer-reviewed publications in total. Full list: [Google Scholar](https://scholar.google.com/citations?user=L1OzFcwAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Florian-Fahrenbach)
+17 peer-reviewed publications in total. Full list: [Google Scholar](https://scholar.google.com/citations?user=L1OzFcwAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Florian-Fahrenbach)
 
 ---
 

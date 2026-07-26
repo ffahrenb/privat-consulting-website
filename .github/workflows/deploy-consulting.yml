@@ -40,7 +40,8 @@ jobs:
 
       # Guard the override: if it were dropped, bun would install native esbuild.
       - name: Assert esbuild override resolves to esbuild-wasm
-        run: grep -q '"esbuild": \["esbuild-wasm' bun.lock || { echo "::error::esbuild override lost — native esbuild would install"; exit 1; }
+        run: |
+          grep -q '"esbuild": \["esbuild-wasm' bun.lock || { echo "::error::esbuild override lost — native esbuild would install"; exit 1; }
 
       - run: bun run build:consulting
 

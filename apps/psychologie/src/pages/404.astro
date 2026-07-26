@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@fahrenbach/ui/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Seite nicht gefunden" description="Die gesuchte Seite wurde nicht gefunden.">
+  <section class="page-header">
+    <div class="container">
+      <h1>Seite nicht gefunden</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p>Die gesuchte Seite existiert nicht oder wurde verschoben. Zurück zur <a href="/">Startseite</a>.</p>
+      <p>The page you're looking for doesn't exist or has moved. Back to the <a href="/en/">homepage</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background-color: var(--color-bg-alt);
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header h1 {
+    max-width: var(--max-width);
+    margin-bottom: 0;
+  }
+</style>

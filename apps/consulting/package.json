@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.3.1",
+    "@fahrenbach/ui": "workspace:*",
     "astro": "^6.1.3",
     "esbuild-wasm": "^0.27.5",
     "sharp": "^0.34.0"

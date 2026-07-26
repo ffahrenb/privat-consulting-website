@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Accordion from '../components/Accordion.astro';
+import Accordion from '@fahrenbach/ui/components/Accordion.astro';
 import { getCollection } from 'astro:content';
 
 const angebot = (await getCollection('pages')).find(p => p.id === 'angebot');

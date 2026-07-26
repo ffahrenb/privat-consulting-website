@@ -159,6 +159,43 @@ const site: SiteConfig = {
 
   themeColor: '#1a3a4a',
 
+  schema: [
+    {
+      '@type': 'Psychologist',
+      '@id': 'https://psychologie.fahrenba.ch/#business',
+      name: 'Florian Fahrenbach, Psychologe FSP',
+      url: 'https://psychologie.fahrenba.ch/',
+      image: 'https://psychologie.fahrenba.ch/og.png',
+      telephone: '+41782220886',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Affolternstrasse 10',
+        addressLocality: 'Hedingen',
+        postalCode: '8908',
+        addressCountry: 'CH',
+      },
+      areaServed: ['Zürich', 'Knonauer Amt', 'Schweiz'],
+      founder: { '@id': 'https://consulting.fahrenba.ch/#person' },
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://consulting.fahrenba.ch/#person',
+      name: 'Florian Fahrenbach',
+      honorificPrefix: 'Dr.',
+      jobTitle: 'Psychologe FSP',
+      memberOf: {
+        '@type': 'Organization',
+        name: 'Föderation der Schweizer Psychologinnen und Psychologen (FSP)',
+      },
+      sameAs: [
+        'https://scholar.google.com/citations?user=L1OzFcwAAAAJ',
+        'https://www.researchgate.net/profile/Florian-Fahrenbach',
+        'https://consulting.fahrenba.ch/',
+      ],
+      url: 'https://psychologie.fahrenba.ch/ueber-mich/',
+    },
+  ],
+
   formspreeId: 'xeeppylr',
   contactForm: {
     kind: 'topics',

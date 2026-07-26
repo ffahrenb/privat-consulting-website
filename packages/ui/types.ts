@@ -92,4 +92,7 @@ export interface SiteConfig {
 
   /** OpenGraph/theme-color brand color, e.g. '#1a2e3d'. */
   themeColor: string;
+
+  /** JSON-LD @graph nodes for the homepage, wrapped in @context by BaseLayout. */
+  schema?: Record<string, unknown>[];
 }

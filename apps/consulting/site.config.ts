@@ -107,6 +107,40 @@ const site: SiteConfig = {
 
   themeColor: '#1a2e3d',
 
+  schema: [
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://consulting.fahrenba.ch/#business',
+      name: 'Florian Fahrenbach, Consulting',
+      url: 'https://consulting.fahrenba.ch/',
+      image: 'https://consulting.fahrenba.ch/og.png',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Affolternstrasse 10',
+        addressLocality: 'Hedingen',
+        postalCode: '8908',
+        addressCountry: 'CH',
+      },
+      areaServed: ['Zürich', 'Zug', 'Schweiz'],
+      founder: { '@id': 'https://consulting.fahrenba.ch/#person' },
+      knowsAbout: ['Organisationsberatung', 'Change Management', 'Data Governance', 'Organisationales Lernen'],
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://consulting.fahrenba.ch/#person',
+      name: 'Florian Fahrenbach',
+      honorificPrefix: 'Dr.',
+      jobTitle: 'Organisationsberater',
+      worksFor: { '@id': 'https://consulting.fahrenba.ch/#business' },
+      sameAs: [
+        'https://scholar.google.com/citations?user=L1OzFcwAAAAJ',
+        'https://www.researchgate.net/profile/Florian-Fahrenbach',
+        'https://psychologie.fahrenba.ch/',
+      ],
+      url: 'https://consulting.fahrenba.ch/ueber-mich/',
+    },
+  ],
+
   formspreeId: 'meeppyrr',
   contactForm: { kind: 'company' },
   referralOptions: {

@@ -7,9 +7,10 @@ interface Props {
   title: string;
   description: string;
   lang?: Lang;
+  schema?: Record<string, unknown>[];
 }
 
-const { title, description, lang = 'de' } = Astro.props;
+const { title, description, lang = 'de', schema } = Astro.props;
 
 const homeTitles = { de: 'Startseite', en: 'Home' };
 const pageTitle = title === homeTitles[lang]
@@ -24,6 +25,7 @@ const defaultUrl = lang === 'de' ? currentPath : alternate.href;
 const ogLocale = lang === 'de' ? 'de_CH' : 'en';
 const ogLocaleAlternate = lang === 'de' ? 'en' : 'de_CH';
 const ogImage = `${siteUrl}/og.png`;
+const jsonLd = schema ? { '@context': 'https://schema.org', '@graph': schema } : null;
 ---
 
 <!doctype html>
@@ -62,6 +64,10 @@ const ogImage = `${siteUrl}/og.png`;
     <meta name="twitter:image" content={ogImage} />
 
     <meta name="theme-color" content={site.themeColor} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
   </head>
   <body>
     <Header lang={lang} />

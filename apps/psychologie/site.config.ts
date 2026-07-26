@@ -135,7 +135,7 @@ const site: SiteConfig = {
   crossLink: {
     url: {
       de: 'https://consulting.fahrenba.ch',
-      en: 'https://consulting.fahrenba.ch',
+      en: 'https://consulting.fahrenba.ch/en/',
     },
     label: 'consulting.fahrenba.ch',
     text: {

@@ -1,0 +1,56 @@
+name: Deploy psychologie.fahrenba.ch
+
+# Cross-repo deploy: a GitHub repo serves only ONE Pages site, so the psychologie
+# app is built here and PUSHED to the OLD privat-psychologie-website repo's
+# `gh-pages` branch, which serves psychologie.fahrenba.ch.
+#
+# GATED — this workflow is INERT until BOTH manual steps are done (see DEPLOYMENT.md):
+#   1. Add repo secret PSYCH_DEPLOY_KEY: an SSH private key whose matching public key
+#      is a *write-enabled* deploy key on ffahrenb/privat-psychologie-website.
+#   2. After this workflow first creates the gh-pages branch, flip that repo's
+#      Pages source to branch `gh-pages` (GitHub settings / Pages API).
+# Until then the site keeps being served by the psych repo's own untouched workflow,
+# so the blast radius before the flip is exactly zero.
+#
+# The CNAME file (psychologie.fahrenba.ch) ships inside apps/psychologie/dist, so the
+# custom domain survives the push. Do NOT set peaceiris' `cname:` input and never send
+# `cname` via the Pages API PUT — that is what protects the existing DNS + certificate.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install
+
+      # Guard the override: if it were dropped, bun would install native esbuild.
+      - name: Assert esbuild override resolves to esbuild-wasm
+        run: grep -q '"esbuild": \["esbuild-wasm' bun.lock || { echo "::error::esbuild override lost — native esbuild would install"; exit 1; }
+
+      - run: bun run build:psychologie
+
+      - name: Push to privat-psychologie-website gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.PSYCH_DEPLOY_KEY }}
+          external_repository: ffahrenb/privat-psychologie-website
+          publish_branch: gh-pages
+          publish_dir: apps/psychologie/dist
+          # No `cname:` here on purpose — the CNAME file in publish_dir is authoritative.

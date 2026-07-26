@@ -1,29 +1,35 @@
-# privat-consulting-website
+# fahrenba.ch — monorepo
 
-Professional website for **Florian Fahrenbach, Consulting** — organizational
-consulting at the intersection of data, psychology, and change management.
-Based in Hedingen, Switzerland.
+Bun-workspace monorepo for the two fahrenba.ch sites. Both are Astro v6 static sites
+sharing the same stack; each deploys to its own domain.
 
-Live at **[consulting.fahrenba.ch](https://consulting.fahrenba.ch)** (GitHub Pages).
-Sister site: **[psychologie.fahrenba.ch](https://psychologie.fahrenba.ch)**.
-
-## Tech stack
-
-- [Astro](https://astro.build) v6 — static site generator, zero client JS
-- Vanilla CSS with custom properties (`src/styles/global.css`)
-- German-language content (DE) with English (EN) i18n
-- [Formspree](https://formspree.io) contact form backend
-- Self-hosted fonts (DM Serif Display, Source Sans 3)
-- Deployed to GitHub Pages via GitHub Actions on push to `main`
-
-## Development
-
-```bash
-bun install
-bun run dev       # dev server with hot reload
-bun run build     # build static site to dist/
-bun run preview   # preview production build locally
+```
+apps/
+  consulting/     consulting.fahrenba.ch   (deployed from THIS repo's Pages)
+  psychologie/    psychologie.fahrenba.ch  (built here, pushed to the psych repo's gh-pages)
+.github/workflows/
+  deploy-consulting.yml     native GitHub Pages deploy
+  deploy-psychologie.yml    cross-repo gh-pages push (gated — see DEPLOYMENT.md)
 ```
 
-See `CLAUDE.md` for architecture and content conventions, `DEPLOYMENT.md` for
-deployment details, and `PLAN.md` for the two-site consolidation plan.
+## Quick start
+
+```bash
+bun install              # from the repo root — installs both apps
+bun run dev:consulting   # http://localhost:4321
+bun run dev:psychologie
+bun run build            # build both apps
+```
+
+The `esbuild → esbuild-wasm` override lives in the **root** `package.json` (bun only honours
+it there). Each app declares `sharp` directly for Astro's image optimization.
+
+## Layout notes
+
+- Nothing is shared between the apps yet — each carries its own `src/`, `public/`, and config.
+  Extracting the common UI into `packages/ui` is a later step (see `PLAN.md`, phase 2).
+- `apps/psychologie` was grafted from `ffahrenb/privat-psychologie-website` with full history
+  preserved and path-addressable: `git log -- apps/psychologie/`.
+
+See **`DEPLOYMENT.md`** for domains, DNS, and the gated psychologie deploy activation, and
+**`PLAN.md`** for the full consolidation roadmap.

@@ -1,0 +1,59 @@
+name: Deploy consulting.fahrenba.ch
+
+# Native GitHub Pages deploy for THIS repo's Pages site (consulting.fahrenba.ch).
+# Unchanged from the pre-monorepo workflow except the build now runs in the
+# bun workspace and the artifact path moved from `dist` to `apps/consulting/dist`.
+# One GitHub repo serves exactly one Pages site, so only consulting deploys natively
+# here; psychologie is pushed to its own repo's gh-pages branch (see deploy-psychologie.yml).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      # Install the whole workspace from the repo root so the esbuild->esbuild-wasm
+      # override (root package.json) is honoured.
+      - run: bun install
+
+      # Guard the override: if it were dropped, bun would install native esbuild.
+      - name: Assert esbuild override resolves to esbuild-wasm
+        run: grep -q '"esbuild": \["esbuild-wasm' bun.lock || { echo "::error::esbuild override lost — native esbuild would install"; exit 1; }
+
+      - run: bun run build:consulting
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/consulting/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

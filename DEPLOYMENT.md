@@ -2,12 +2,17 @@
 
 ## Architecture
 
-Two independent Astro static sites, same stack:
+One **monorepo** (`ffahrenb/privat-consulting-website`, bun workspace) that builds
+two independent Astro static sites, each on its own domain:
 
-| Site | Domain | Repo |
+| App path | Domain | Pages served from |
 |---|---|---|
-| Psychologie | `psychologie.fahrenba.ch` | `ffahrenb/privat-psychologie-website` |
-| Consulting | `consulting.fahrenba.ch` | `ffahrenb/privat-consulting-website` |
+| `apps/consulting` | `consulting.fahrenba.ch` | THIS repo's Pages (native `deploy-pages`) |
+| `apps/psychologie` | `psychologie.fahrenba.ch` | `ffahrenb/privat-psychologie-website` `gh-pages` branch (cross-repo push) |
+
+A GitHub repo serves exactly one Pages site, which is why psychologie is *built here but
+pushed elsewhere*. The old `privat-psychologie-website` repo is kept (not archived) purely
+to host the `gh-pages` branch that serves the domain.
 
 Redirect: `psychology.fahrenba.ch` → `psychologie.fahrenba.ch/en/` (301, via Cloudflare)
 
@@ -46,29 +51,56 @@ SSL certificates are auto-provisioned by GitHub (Let's Encrypt). The `CNAME` fil
 
 ## Deploy
 
-Both sites auto-deploy on push to `main` via `.github/workflows/deploy.yml`:
+Both sites auto-deploy on push to `main`, via two workflows:
+
+| Workflow | Builds | Deploys to |
+|---|---|---|
+| `.github/workflows/deploy-consulting.yml` | `apps/consulting` | this repo's Pages (native `actions/deploy-pages`) |
+| `.github/workflows/deploy-psychologie.yml` | `apps/psychologie` | `privat-psychologie-website` `gh-pages` (peaceiris cross-repo push) |
 
 ```
-push to main → GitHub Actions → bun install → bun run build → deploy to Pages
+push to main → GitHub Actions → bun install (workspace root) → bun run build:<app> → deploy
 ```
 
-To deploy manually: **Actions → Deploy to GitHub Pages → Run workflow**
+To deploy manually: **Actions → (workflow) → Run workflow**.
 
-To deploy both sites simultaneously:
-```bash
-cd ~/Projects/privat-psychologie-website && git push
-cd ~/Projects/privat-consulting-website && git push
-```
+### ⚠️ Phase-1 activation — GATED manual steps for the psychologie cross-repo deploy
+
+`deploy-psychologie.yml` is committed but **inert** until both of these are done. Until then
+psychologie.fahrenba.ch is still served by the OLD repo's own untouched workflow, so the blast
+radius is zero:
+
+1. **Create the deploy key.** Generate an SSH keypair. Add the **public** key as a
+   *write-enabled* Deploy Key on `ffahrenb/privat-psychologie-website`
+   (Settings → Deploy keys → "Allow write access"). Add the **private** key as the secret
+   `PSYCH_DEPLOY_KEY` on `ffahrenb/privat-consulting-website` (Settings → Secrets → Actions).
+2. **Merge `monorepo` → `main`** and let `deploy-psychologie.yml` run once. It creates the
+   `gh-pages` branch on the psych repo. Only *then* flip that repo's
+   **Settings → Pages → Source** to branch `gh-pages` (or `gh api -X PUT` the Pages source).
+   **Never send `cname`** in that PUT — the `CNAME` file in `dist` already carries the domain;
+   sending `cname` risks the existing DNS/cert.
+
+Ordering matters: create the branch first (step 2's workflow run), *then* flip the source.
+Rollback: everything is on the `monorepo` branch until the merge; both `main`s were tagged
+`pre-monorepo`. The Pages-source flip is the only irreversible-feeling step and reverses in one
+click.
 
 ## Local Development
 
+Bun workspace — run from the repo root:
+
 ```bash
-bun run dev       # dev server with hot reload
-bun run build     # build static site to dist/
-bun run preview   # preview production build
+bun install              # install both apps' deps (honours the root esbuild override)
+bun run dev:consulting   # dev server for apps/consulting
+bun run dev:psychologie  # dev server for apps/psychologie
+bun run build            # build BOTH apps
+bun run build:consulting # build one app -> apps/consulting/dist
 ```
 
-Note: Windows enterprise security blocks native esbuild. The `overrides` field in `package.json` maps `esbuild` to `esbuild-wasm`.
+Note: Windows enterprise security blocks native esbuild. The `overrides` field in the **root**
+`package.json` maps `esbuild` → `esbuild-wasm` (bun only honours `overrides` at the workspace
+root). Each app also declares `sharp` directly, because in the workspace layout Astro's image
+optimizer can't resolve it as a transitive optional dep.
 
 ## Troubleshooting
 

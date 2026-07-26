@@ -1,8 +1,6 @@
 ---
 title: Für Unternehmen
 description: "Employee Assistance Program und Workshops für Unternehmen – vertrauliche psychologische Beratung für Mitarbeitende."
-navOrder: 4
-navGroup: main
 ---
 
 ## Psychologische Unterstützung für Ihre Mitarbeitenden

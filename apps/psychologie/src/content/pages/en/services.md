@@ -1,8 +1,6 @@
 ---
 title: Services
 description: "Psychological counselling and coaching: stress & recovery, vocation coaching, mountain psychology, executive coaching."
-navOrder: 3
-navGroup: main
 ---
 
 ## Overview

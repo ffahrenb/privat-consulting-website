@@ -1,8 +1,6 @@
 ---
 title: Kontakt
 description: "Kontaktieren Sie Florian Fahrenbach – Erstgespräch für Organisationsberatung und Consulting vereinbaren."
-navOrder: 5
-navGroup: main
 ---
 
 ## Kontakt aufnehmen

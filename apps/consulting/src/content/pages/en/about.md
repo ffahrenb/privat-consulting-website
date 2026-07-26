@@ -1,8 +1,6 @@
 ---
 title: About
 description: "Florian Fahrenbach – organisational consultant, psychologist and data engineer. Hands-on experience meets scientific rigour."
-navOrder: 2
-navGroup: main
 ---
 
 ## Who I am

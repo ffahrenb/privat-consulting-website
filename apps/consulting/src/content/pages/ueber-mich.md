@@ -1,8 +1,6 @@
 ---
 title: Über mich
 description: "Florian Fahrenbach – Organisationsberater, Psychologe und Data Engineer. Operative Erfahrung und wissenschaftliche Fundierung."
-navOrder: 2
-navGroup: main
 ---
 
 ## Wer ich bin

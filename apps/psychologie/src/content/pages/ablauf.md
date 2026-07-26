@@ -1,8 +1,6 @@
 ---
 title: Ablauf & Konditionen
 description: "So läuft die Beratung ab – Erstgespräch, Prozess, Rahmenbedingungen, Preise und Konditionen."
-navOrder: 6
-navGroup: main
 ---
 
 ## Für Einzelpersonen

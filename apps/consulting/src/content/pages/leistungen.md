@@ -1,8 +1,6 @@
 ---
 title: Leistungen
 description: "Führung & Zusammenarbeit, Veränderung & Architektur, Datenkultur & Governance – Organisationsberatung an der Schnittstelle von Mensch, Technologie und Organisation."
-navOrder: 3
-navGroup: main
 ---
 
 ## Führung & Zusammenarbeit

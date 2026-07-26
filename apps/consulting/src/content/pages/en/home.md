@@ -1,8 +1,6 @@
 ---
 title: Home
 description: "At the intersection of people, technology & organisation – Florian Fahrenbach, organisational consultant, psychologist and data engineer."
-navOrder: 1
-navGroup: hidden
 ---
 
 ## What I do differently

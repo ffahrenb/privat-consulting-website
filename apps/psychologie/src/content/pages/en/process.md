@@ -1,8 +1,6 @@
 ---
 title: Process & Conditions
 description: "How we work together – initial consultation, session format, pricing and cancellation policy."
-navOrder: 6
-navGroup: main
 ---
 
 ## For individuals

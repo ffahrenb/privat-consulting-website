@@ -1,8 +1,6 @@
 ---
 title: "Notice: Not psychotherapy"
 description: "Distinction between psychological counselling and psychotherapy – what I offer and what I don't."
-navOrder: 10
-navGroup: footer
 ---
 
 ## What is psychological counselling?

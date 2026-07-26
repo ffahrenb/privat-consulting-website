@@ -1,8 +1,6 @@
 ---
 title: Contact
 description: "Get in touch with Florian Fahrenbach – schedule a free initial consultation for psychological counselling and coaching."
-navOrder: 7
-navGroup: main
 ---
 
 ## Get in touch

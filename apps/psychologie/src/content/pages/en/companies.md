@@ -1,8 +1,6 @@
 ---
 title: For Companies
 description: "Employee Assistance Programme – confidential psychological support for your employees, workshops and seminars."
-navOrder: 4
-navGroup: main
 ---
 
 ## Psychological support for your employees

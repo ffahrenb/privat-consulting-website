@@ -1,8 +1,6 @@
 ---
 title: Home
 description: "Psychological counselling for people in motion – Florian Fahrenbach, Psychologist FSP. Stress & recovery, vocation coaching, mountain psychology."
-navOrder: 1
-navGroup: hidden
 ---
 
 ## About me

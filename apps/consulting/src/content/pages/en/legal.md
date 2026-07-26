@@ -1,8 +1,6 @@
 ---
 title: Legal Notice
 description: "Legal notice – information pursuant to Swiss law, disclaimer and copyright."
-navOrder: 6
-navGroup: footer
 ---
 
 ## Information pursuant to Art. 3 para. 1 lit. s UCA

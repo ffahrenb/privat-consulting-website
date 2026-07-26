@@ -1,8 +1,6 @@
 ---
 title: Ablauf
 description: "So läuft die Zusammenarbeit ab – Auftragsklärung, Formate, Rahmenbedingungen und Konditionen."
-navOrder: 4
-navGroup: main
 ---
 
 ## Zusammenarbeit

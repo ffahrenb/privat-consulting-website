@@ -1,8 +1,6 @@
 ---
 title: Startseite
 description: "An der Schnittstelle von Mensch, Technologie & Organisation – Florian Fahrenbach, Organisationsberater, Psychologe und Data Engineer."
-navOrder: 1
-navGroup: hidden
 ---
 
 ## Was ich anders mache

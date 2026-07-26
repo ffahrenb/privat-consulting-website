@@ -1,8 +1,6 @@
 ---
 title: Datenschutzerklärung
 description: "Datenschutzerklärung gemäss Schweizer DSG und DSGVO – Datenbearbeitung, Cookies, Rechte und Aufsichtsbehörde."
-navOrder: 9
-navGroup: footer
 ---
 
 ## 1. Verantwortliche Stelle

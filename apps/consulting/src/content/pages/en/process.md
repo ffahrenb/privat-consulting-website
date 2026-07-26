@@ -1,8 +1,6 @@
 ---
 title: Process
 description: "How we work together – initial consultation, formats, framework conditions and pricing."
-navOrder: 4
-navGroup: main
 ---
 
 ## Working together

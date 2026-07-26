@@ -1,8 +1,6 @@
 ---
 title: Contact
 description: "Get in touch with Florian Fahrenbach – schedule a free initial consultation for organisational consulting."
-navOrder: 5
-navGroup: main
 ---
 
 ## Get in touch

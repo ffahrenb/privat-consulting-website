@@ -1,8 +1,6 @@
 ---
 title: Impressum
 description: "Impressum – Angaben gemäss Schweizer Recht, Haftungsausschluss und Urheberrecht."
-navOrder: 6
-navGroup: footer
 ---
 
 ## Angaben gemäss Art. 3 Abs. 1 lit. s UWG

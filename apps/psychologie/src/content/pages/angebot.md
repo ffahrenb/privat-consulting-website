@@ -1,8 +1,6 @@
 ---
 title: Angebot
 description: "Psychologische Beratung und Coaching: Stress & Recovery, Berufungscoaching, Psychologie in den Bergen, Coaching für Führungskräfte."
-navOrder: 3
-navGroup: main
 ---
 
 ## Überblick

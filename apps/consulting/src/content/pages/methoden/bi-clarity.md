@@ -1,8 +1,6 @@
 ---
 title: "BI Clarity — Power BI Governance Audit"
 description: "Datengetriebene Bestandsaufnahme Ihrer gesamten Power BI-Landschaft."
-navOrder: 21
-navGroup: hidden
 ---
 
 ## BI Clarity — Das Power BI Governance Audit

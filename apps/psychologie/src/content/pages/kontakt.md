@@ -1,8 +1,6 @@
 ---
 title: Kontakt
 description: "Kontaktieren Sie Florian Fahrenbach, Psychologe FSP – Erstgespräch vereinbaren, Fragen stellen, Erreichbarkeit."
-navOrder: 7
-navGroup: main
 ---
 
 ## Kontakt aufnehmen

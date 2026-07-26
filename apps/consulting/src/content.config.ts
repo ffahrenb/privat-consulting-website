@@ -6,8 +6,6 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    navOrder: z.number(),
-    navGroup: z.enum(['main', 'footer', 'hidden']),
   }),
 });
 

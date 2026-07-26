@@ -1,8 +1,6 @@
 ---
 title: Privacy Policy
 description: "Privacy policy pursuant to Swiss DPA and GDPR – data processing, cookies, rights and supervisory authority."
-navOrder: 7
-navGroup: footer
 ---
 
 ## 1. Responsible party

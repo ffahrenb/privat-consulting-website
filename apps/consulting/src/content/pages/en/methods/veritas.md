@@ -1,8 +1,6 @@
 ---
 title: "VERITAS — ICT Hypothesis Validation"
 description: "Evidence-based decision-making for complex ICT challenges."
-navOrder: 20
-navGroup: hidden
 ---
 
 ## VERITAS — ICT Hypothesis Validation Method

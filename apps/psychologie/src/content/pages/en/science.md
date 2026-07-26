@@ -1,8 +1,6 @@
 ---
 title: Science & Publications
 description: "Research on needs, vision development, stress and recovery – the scientific foundation of my practice."
-navOrder: 7
-navGroup: footer
 ---
 
 ## Research that informs practice

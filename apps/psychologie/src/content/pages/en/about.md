@@ -1,8 +1,6 @@
 ---
 title: About
 description: "Florian Fahrenbach – Psychologist FSP, doctorate in social and economic sciences. Qualifications, experience and approach."
-navOrder: 2
-navGroup: main
 ---
 
 ## Who I am

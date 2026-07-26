@@ -1,8 +1,6 @@
 ---
 title: "Hinweis: Keine Psychotherapie"
 description: "Abgrenzung psychologische Beratung und Psychotherapie – was ich anbiete und was nicht."
-navOrder: 10
-navGroup: footer
 ---
 
 ## Was ist psychologische Beratung?

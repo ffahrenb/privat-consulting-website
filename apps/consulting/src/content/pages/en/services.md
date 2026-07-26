@@ -1,8 +1,6 @@
 ---
 title: Services
 description: "Leadership & collaboration, change & architecture, data culture & governance – organisational consulting at the intersection of people, technology and organisation."
-navOrder: 3
-navGroup: main
 ---
 
 ## Leadership & Collaboration

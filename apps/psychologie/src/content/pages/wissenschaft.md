@@ -1,8 +1,6 @@
 ---
 title: Wissenschaft & Publikationen
 description: "Forschung zu Bedürfnissen, Visionsentwicklung, Stress und Recovery – wissenschaftliche Grundlage meiner Beratung."
-navOrder: 7
-navGroup: footer
 ---
 
 ## Forschung, die in die Praxis fliesst

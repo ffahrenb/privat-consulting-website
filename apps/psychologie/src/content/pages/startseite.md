@@ -1,8 +1,6 @@
 ---
 title: Startseite
 description: "Psychologische Beratung für Menschen in Bewegung – Florian Fahrenbach, Psychologe FSP. Stress & Recovery, Berufungscoaching, Psychologie in den Bergen."
-navOrder: 1
-navGroup: hidden
 ---
 
 ## Kurzvorstellung

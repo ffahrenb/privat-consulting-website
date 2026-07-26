@@ -1,8 +1,6 @@
 ---
 title: Über mich
 description: "Florian Fahrenbach – Psychologe FSP, promovierter Sozial- und Wirtschaftswissenschaftler. Qualifikation, Erfahrung und Arbeitsweise."
-navOrder: 2
-navGroup: main
 ---
 
 ## Wer ich bin

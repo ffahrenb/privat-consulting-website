@@ -1,0 +1,62 @@
+name: Sync cv-data from fahrenbach_cv
+
+# Receiver half of the CV → website publications pipeline.
+# ffahrenb/fahrenbach_cv (private) sends a repository_dispatch when its
+# publications.bib changes, carrying the new bib base64-encoded in the payload
+# (the repo is private, so the file travels in the event rather than being
+# fetched). This workflow vendors the bib, regenerates publications.json and
+# opens a PR — the sites never change without review.
+#
+# Manual runs (workflow_dispatch) skip the vendoring and just regenerate the
+# JSON from the already-vendored bib (useful after hand-edits here).
+
+on:
+  repository_dispatch:
+    types: [cv-bib-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Vendor publications.bib from dispatch payload
+        if: github.event_name == 'repository_dispatch'
+        env:
+          BIB_B64: ${{ github.event.client_payload.bib_b64 }}
+        run: |
+          if [ -z "$BIB_B64" ]; then
+            echo "::error::dispatch payload missing bib_b64"; exit 1
+          fi
+          printf '%s' "$BIB_B64" | base64 -d > packages/cv-data/publications.bib
+
+      - run: bun install
+
+      - name: Regenerate publications.json
+        run: bun run --cwd packages/cv-data generate
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: cv-data-sync
+          delete-branch: true
+          add-paths: |
+            packages/cv-data/publications.bib
+            packages/cv-data/publications.json
+          commit-message: "chore(cv-data): sync publications from fahrenbach_cv"
+          title: "chore(cv-data): sync publications from fahrenbach_cv"
+          body: |
+            Automated sync: `publications.bib` changed in `ffahrenb/fahrenbach_cv`.
+
+            This PR vendors the new bib and regenerates `publications.json`.
+            Review the diff (new/changed entries render on the wissenschaft/science
+            and ueber-mich/about pages) and merge to deploy.

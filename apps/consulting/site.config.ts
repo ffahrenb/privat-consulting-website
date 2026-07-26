@@ -105,6 +105,8 @@ const site: SiteConfig = {
     },
   },
 
+  themeColor: '#1a2e3d',
+
   formspreeId: 'meeppyrr',
   contactForm: { kind: 'company' },
   referralOptions: {

@@ -89,4 +89,7 @@ export interface SiteConfig {
   contactForm: ContactFormShape;
   /** Options for the (optional) "how did you find me?" referral select. */
   referralOptions: Localized<{ value: string; label: string }[]>;
+
+  /** OpenGraph/theme-color brand color, e.g. '#1a2e3d'. */
+  themeColor: string;
 }

@@ -157,6 +157,8 @@ const site: SiteConfig = {
     },
   },
 
+  themeColor: '#1a3a4a',
+
   formspreeId: 'xeeppylr',
   contactForm: {
     kind: 'topics',

@@ -19,6 +19,11 @@ const pageTitle = title === homeTitles[lang]
 const currentPath = Astro.url.pathname;
 const alternate = getAlternateUrl(currentPath, site.slugMap);
 const siteUrl = site.siteUrl;
+const canonicalUrl = `${siteUrl}${currentPath}`;
+const defaultUrl = lang === 'de' ? currentPath : alternate.href;
+const ogLocale = lang === 'de' ? 'de_CH' : 'en';
+const ogLocaleAlternate = lang === 'de' ? 'en' : 'de_CH';
+const ogImage = `${siteUrl}/og.png`;
 ---
 
 <!doctype html>
@@ -36,6 +41,27 @@ const siteUrl = site.siteUrl;
 
     <link rel="alternate" hreflang={alternate.lang} href={`${siteUrl}${alternate.href}`} />
     <link rel="alternate" hreflang={lang} href={`${siteUrl}${currentPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${defaultUrl}`} />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={`${site.name}, ${site.tagline[lang]}`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content={site.themeColor} />
   </head>
   <body>
     <Header lang={lang} />

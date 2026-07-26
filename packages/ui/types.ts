@@ -33,7 +33,7 @@ export interface FooterBadge {
 
 export type ContactFormShape =
   | { kind: 'company' }
-  | { kind: 'topics'; options: Localized<string[]> };
+  | { kind: 'topics'; label: Localized<string>; options: Localized<string[]> };
 
 /**
  * The full per-site data contract that shared packages/ui components read
@@ -87,4 +87,6 @@ export interface SiteConfig {
 
   formspreeId: string;
   contactForm: ContactFormShape;
+  /** Options for the (optional) "how did you find me?" referral select. */
+  referralOptions: Localized<{ value: string; label: string }[]>;
 }

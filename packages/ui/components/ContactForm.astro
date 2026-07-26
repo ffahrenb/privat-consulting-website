@@ -1,4 +1,5 @@
 ---
+import site from '@site';
 import type { Lang } from '../i18n';
 
 interface Props {
@@ -6,8 +7,13 @@ interface Props {
 }
 
 const { lang = 'de' } = Astro.props;
-const formspreeId = 'meeppyrr';
 const isEn = lang === 'en';
+const { formspreeId, contactForm, referralOptions } = site;
+
+const domain = site.siteUrl.replace(/^https?:\/\//, '');
+const messageLabel = contactForm.kind === 'topics'
+  ? (isEn ? 'Your message' : 'Ihre Nachricht')
+  : (isEn ? 'Your message' : 'Ihr Anliegen');
 ---
 
 <form
@@ -16,12 +22,12 @@ const isEn = lang === 'en';
   class="contact-form"
 >
   <input type="hidden" name="_next" value={isEn
-    ? 'https://consulting.fahrenba.ch/en/contact/?success=1'
-    : 'https://consulting.fahrenba.ch/kontakt/?success=1'
+    ? `${site.siteUrl}/en/contact/?success=1`
+    : `${site.siteUrl}/kontakt/?success=1`
   } />
   <input type="hidden" name="_subject" value={isEn
-    ? 'New enquiry via consulting.fahrenba.ch'
-    : 'Neue Anfrage über consulting.fahrenba.ch'
+    ? `New enquiry via ${domain}`
+    : `Neue Anfrage über ${domain}`
   } />
   <input type="hidden" name="_language" value={lang} />
   <input type="text" name="_gotcha" style="display:none" />
@@ -41,38 +47,35 @@ const isEn = lang === 'en';
     <input type="tel" id="phone" name="phone" autocomplete="tel" />
   </div>
 
-  <div class="form-group">
-    <label for="company">{isEn ? 'Company' : 'Unternehmen'} <span class="optional">({isEn ? 'optional' : 'optional'})</span></label>
-    <input type="text" id="company" name="company" autocomplete="organization" />
-  </div>
+  {contactForm.kind === 'company' ? (
+    <div class="form-group">
+      <label for="company">{isEn ? 'Company' : 'Unternehmen'} <span class="optional">({isEn ? 'optional' : 'optional'})</span></label>
+      <input type="text" id="company" name="company" autocomplete="organization" />
+    </div>
+  ) : (
+    <div class="form-group">
+      <label for="topic">{contactForm.label[lang]} <span class="required">*</span></label>
+      <select id="topic" name="topic" required>
+        <option value="">{isEn ? '– Please select –' : '– Bitte wählen –'}</option>
+        {contactForm.options[lang].map(option => (
+          <option value={option}>{option}</option>
+        ))}
+      </select>
+    </div>
+  )}
 
   <div class="form-group">
-    <label for="message">{isEn ? 'Your message' : 'Ihr Anliegen'} <span class="required">*</span></label>
+    <label for="message">{messageLabel} <span class="required">*</span></label>
     <textarea id="message" name="message" rows="5" required></textarea>
   </div>
 
   <div class="form-group">
     <label for="referral">{isEn ? 'How did you find me?' : 'Wie sind Sie auf mich aufmerksam geworden?'} <span class="optional">({isEn ? 'optional' : 'optional'})</span></label>
     <select id="referral" name="referral">
-      {isEn ? (
-        <>
-          <option value="">– Please select –</option>
-          <option value="Search engine">Search engine (Google, etc.)</option>
-          <option value="Recommendation">Recommendation</option>
-          <option value="LinkedIn">LinkedIn</option>
-          <option value="Social media">Social media</option>
-          <option value="Other">Other</option>
-        </>
-      ) : (
-        <>
-          <option value="">– Bitte wählen –</option>
-          <option value="Suchmaschine">Suchmaschine (Google, etc.)</option>
-          <option value="Empfehlung">Empfehlung</option>
-          <option value="LinkedIn">LinkedIn</option>
-          <option value="Soziale Medien">Soziale Medien</option>
-          <option value="Anderes">Anderes</option>
-        </>
-      )}
+      <option value="">{isEn ? '– Please select –' : '– Bitte wählen –'}</option>
+      {referralOptions[lang].map(option => (
+        <option value={option.value}>{option.label}</option>
+      ))}
     </select>
   </div>
 
@@ -136,7 +139,7 @@ const isEn = lang === 'en';
   select:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(46, 125, 106, 0.12);
+    box-shadow: 0 0 0 3px var(--color-accent-shadow);
   }
 
   textarea {

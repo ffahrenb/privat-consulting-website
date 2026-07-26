@@ -107,6 +107,22 @@ const site: SiteConfig = {
 
   formspreeId: 'meeppyrr',
   contactForm: { kind: 'company' },
+  referralOptions: {
+    de: [
+      { value: 'Suchmaschine', label: 'Suchmaschine (Google, etc.)' },
+      { value: 'Empfehlung', label: 'Empfehlung' },
+      { value: 'LinkedIn', label: 'LinkedIn' },
+      { value: 'Soziale Medien', label: 'Soziale Medien' },
+      { value: 'Anderes', label: 'Anderes' },
+    ],
+    en: [
+      { value: 'Search engine', label: 'Search engine (Google, etc.)' },
+      { value: 'Recommendation', label: 'Recommendation' },
+      { value: 'LinkedIn', label: 'LinkedIn' },
+      { value: 'Social media', label: 'Social media' },
+      { value: 'Other', label: 'Other' },
+    ],
+  },
 };
 
 export default site;

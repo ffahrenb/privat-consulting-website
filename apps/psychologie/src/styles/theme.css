@@ -16,4 +16,9 @@
      inline in Footer.astro; needed as tokens now that Footer is shared. */
   --color-bg-border: rgba(247, 244, 240, 0.15);
   --color-bg-border-subtle: rgba(247, 244, 240, 0.1);
+
+  /* Contact-form focus ring, previously a hardcoded rgba(--color-accent)
+     literal inline in ContactForm.astro; needed as a token now that
+     ContactForm is a single shared component. */
+  --color-accent-shadow: rgba(200, 85, 61, 0.12);
 }

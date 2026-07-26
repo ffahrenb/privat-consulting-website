@@ -160,6 +160,7 @@ const site: SiteConfig = {
   formspreeId: 'xeeppylr',
   contactForm: {
     kind: 'topics',
+    label: { de: 'Ihr Anliegen', en: 'Your concern' },
     options: {
       de: [
         'Stress & Recovery',
@@ -178,6 +179,22 @@ const site: SiteConfig = {
         'Other',
       ],
     },
+  },
+  referralOptions: {
+    de: [
+      { value: 'Suchmaschine', label: 'Suchmaschine (Google, etc.)' },
+      { value: 'Empfehlung', label: 'Empfehlung' },
+      { value: 'FSP Psyfinder', label: 'FSP Psyfinder' },
+      { value: 'Soziale Medien', label: 'Soziale Medien' },
+      { value: 'Anderes', label: 'Anderes' },
+    ],
+    en: [
+      { value: 'Search engine', label: 'Search engine (Google, etc.)' },
+      { value: 'Recommendation', label: 'Recommendation' },
+      { value: 'FSP Psyfinder', label: 'FSP Psyfinder' },
+      { value: 'Social media', label: 'Social media' },
+      { value: 'Other', label: 'Other' },
+    ],
   },
 };
 

@@ -1,0 +1,175 @@
+---
+import { publications, selectedPublications, ANNOTATIONS } from '@fahrenbach/cv-data';
+import type { Publication, PublicationCategory } from '@fahrenbach/cv-data';
+
+interface Props {
+  lang: 'de' | 'en';
+  filter: 'all' | 'selected';
+}
+
+const { lang, filter } = Astro.props;
+const isEn = lang === 'en';
+
+function initials(given: string): string {
+  return given
+    .trim()
+    .split(/\s+/)
+    .map((part) => `${part[0].toUpperCase()}.`)
+    .join(' ');
+}
+
+function formatAuthors(authors: { family: string; given: string }[]): string {
+  const names = authors.map((a) => `${a.family}, ${initials(a.given)}`);
+  if (names.length === 1) return names[0];
+  return `${names.slice(0, -1).join(', ')} & ${names[names.length - 1]}`;
+}
+
+function endWithPeriod(text: string): string {
+  const trimmed = text.trim();
+  return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`;
+}
+
+function formatBody(pub: Publication): string {
+  switch (pub.category) {
+    case 'journal': {
+      let venuePart: string;
+      if (pub.volume && pub.issue) {
+        venuePart = `<em>${pub.venue}, ${pub.volume}</em>(${pub.issue})`;
+      } else if (pub.volume) {
+        venuePart = `<em>${pub.venue}, ${pub.volume}</em>`;
+      } else {
+        venuePart = `<em>${pub.venue}</em>`;
+      }
+      return pub.pages ? `${venuePart}, ${pub.pages}.` : `${venuePart}.`;
+    }
+    case 'proceedings':
+    case 'chapter': {
+      const pages = pub.pages ? ` (pp. ${pub.pages})` : '';
+      return `In <em>${pub.venue}</em>${pages}.`;
+    }
+    case 'talk':
+    case 'poster':
+    case 'invited-talk':
+      return pub.eventNote ? endWithPeriod(pub.eventNote) : '';
+    case 'phd-thesis': {
+      const label = isEn ? 'Doctoral dissertation' : 'Dissertation';
+      return `${label}, ${pub.venue}.`;
+    }
+    case 'master-thesis': {
+      const label = isEn ? "Master's thesis" : 'Masterarbeit';
+      return `${label}, ${pub.venue}.`;
+    }
+    default:
+      return '';
+  }
+}
+
+function formatCitation(pub: Publication): string {
+  const authors = formatAuthors(pub.authors);
+  const title = endWithPeriod(pub.title);
+  const body = formatBody(pub);
+
+  let link = '';
+  if (pub.doi) {
+    link = ` <a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer">https://doi.org/${pub.doi}</a>`;
+  } else if (pub.url) {
+    link = ` <a href="${pub.url}" target="_blank" rel="noopener noreferrer">${pub.url}</a>`;
+  }
+
+  const award = ANNOTATIONS[pub.key]?.award ? ' <strong>Best Paper Award.</strong>' : '';
+
+  return `${authors} (${pub.year}). ${title} ${body}${link}${award}`;
+}
+
+interface Group {
+  heading: string;
+  items: Publication[];
+}
+
+function groupsFor(): Group[] {
+  const byCategory = (...cats: PublicationCategory[]) =>
+    publications.filter((p) => cats.includes(p.category));
+
+  const defs: [string, string, Publication[]][] = [
+    [
+      'Zeitschriftenartikel (Peer-Review)',
+      'Journal articles (peer-reviewed)',
+      byCategory('journal'),
+    ],
+    [
+      'Konferenzbeiträge und Buchkapitel',
+      'Conference proceedings and book chapters',
+      byCategory('proceedings', 'chapter'),
+    ],
+    ['Konferenzvorträge', 'Conference presentations', byCategory('talk')],
+    ['Poster', 'Posters', byCategory('poster')],
+    ['Eingeladene Vorträge', 'Invited talks', byCategory('invited-talk')],
+    ['Abschlussarbeiten', 'Theses', byCategory('phd-thesis', 'master-thesis')],
+  ];
+
+  return defs
+    .filter(([, , items]) => items.length > 0)
+    .map(([de, en, items]) => ({ heading: isEn ? en : de, items }));
+}
+
+const heading = filter === 'selected'
+  ? (isEn ? 'Selected publications' : 'Ausgewählte Publikationen')
+  : (isEn ? 'Publications & talks' : 'Publikationen & Vorträge');
+
+const flatList = filter === 'selected' ? selectedPublications() : [];
+const groups = filter === 'all' ? groupsFor() : [];
+---
+
+<div class="publications">
+  <h2>{heading}</h2>
+  {filter === 'selected' ? (
+    <ul class="citation-list">
+      {flatList.map((pub) => (
+        <li set:html={formatCitation(pub)} />
+      ))}
+    </ul>
+  ) : (
+    groups.map((group) => (
+      <>
+        <h3>{group.heading}</h3>
+        <ul class="citation-list">
+          {group.items.map((pub) => (
+            <li set:html={formatCitation(pub)} />
+          ))}
+        </ul>
+      </>
+    ))
+  )}
+</div>
+
+<style>
+  .publications {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .citation-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  .citation-list li {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+  }
+
+  .citation-list :global(a) {
+    color: var(--color-accent);
+    word-break: break-word;
+  }
+
+  .citation-list :global(a:hover) {
+    color: var(--color-primary);
+  }
+
+  .citation-list :global(strong) {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+</style>

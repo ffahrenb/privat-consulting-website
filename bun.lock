@@ -38,6 +38,9 @@
     "packages/ui": {
       "name": "@fahrenbach/ui",
       "version": "0.1.0",
+      "dependencies": {
+        "@fahrenbach/cv-data": "workspace:*",
+      },
     },
   },
   "overrides": {

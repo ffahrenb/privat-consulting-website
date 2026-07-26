@@ -1,7 +1,7 @@
 import './src/styles/theme.css';
 import type { SiteConfig } from '@fahrenbach/ui/types';
 
-export { default as Header } from './src/components/Header.astro';
+export { default as Header } from '@fahrenbach/ui/components/Header.astro';
 export { default as Footer } from '@fahrenbach/ui/components/Footer.astro';
 
 const site: SiteConfig = {
